@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
         <activity
+            android:name=".AccountTypeActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartPageActivity"
             android:exported="true">
             <intent-filter>
