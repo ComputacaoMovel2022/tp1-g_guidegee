@@ -10,16 +10,16 @@ Projeto desenvolvido no contexto da UC de Computação Móvel.
  - Request Guide
  - Guide Map Area
  - Guide List Page
-## Luís
- - Message Page (Refugee POV)
- - Create Review
- - Refugee Guide's List
 ## Guilherme
  - Type of Account
  - Register Page
  - Login Page
  - Guest Info Page
  - Starting Page
+## Luís
+ - Message Page (Refugee POV)
+ - Create Review
+ - Refugee Guide's List
 ## Rafael
  - Edit Profile Page
  - Profile Page
