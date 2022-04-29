@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ProjetoCM</string>
+    <string name="requests_for_guidance">Requests for guidance</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
 </resources>
