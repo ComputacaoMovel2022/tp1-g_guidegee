@@ -15,12 +15,17 @@ public class StartPageActivity extends AppCompatActivity {
         setContentView(R.layout.start_page);
 
         Button signUpButton = (Button) findViewById(R.id.signupbtn);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StartPageActivity.this, AccountTypeActivity.class));
-                finish();
-            }
-        });
+    }
+
+    public void typeOfAccountClick(View view)
+    {
+        startActivity(new Intent(StartPageActivity.this, AccountTypeActivity.class));
+        finish();
+    }
+
+    public void loginClick(View view)
+    {
+        startActivity(new Intent(StartPageActivity.this, LoginPageActivity.class));
+        finish();
     }
 }

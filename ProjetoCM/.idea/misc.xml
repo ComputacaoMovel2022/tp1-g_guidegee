@@ -5,13 +5,18 @@
       <map>
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="app/src/main/res/drawable/rectangle_7.xml" value="0.3495" />
+        <entry key="app/src/main/res/drawable/rectangle_text_box.xml" value="0.3495" />
+        <entry key="app/src/main/res/drawable/rectangule_green_btn.xml" value="0.3495" />
         <entry key="app/src/main/res/drawable/rounded_corner_green.xml" value="0.3495" />
         <entry key="app/src/main/res/drawable/rounded_corner_white.xml" value="0.3495" />
         <entry key="app/src/main/res/drawable/rounded_corner_whitered.xml" value="0.3495" />
+        <entry key="app/src/main/res/layout/account_type.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up_page.xml" value="0.33" />
         <entry key="app/src/main/res/layout/bottom_bar.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/list_requests_from_refugees.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/layout/login_page.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/ogin_page.xml" value="0.33" />
         <entry key="app/src/main/res/layout/sign_up_page.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/start_page.xml" value="0.33" />
         <entry key="app/src/main/res/layout/top_bar.xml" value="0.3536458333333333" />
