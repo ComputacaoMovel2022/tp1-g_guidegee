@@ -14,7 +14,10 @@ public class StartPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page);
 
-        Button signUpButton = (Button) findViewById(R.id.signupbtn);
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
+        }
     }
 
     public void typeOfAccountClick(View view)

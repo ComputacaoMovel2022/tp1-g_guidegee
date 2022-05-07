@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
         <activity
+            android:name=".GuideSignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SuccessfulRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RefugeeSignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginPageActivity"
             android:exported="false" />
         <activity
