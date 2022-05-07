@@ -11,7 +11,19 @@ public class StartPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.SplashTheme);
+
+        //apenas para teste pois a app inicia demasiado rapido
+        //TODO: mudar a cor do background da splashscreen para branco (ta preto em light mode)
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         super.onCreate(savedInstanceState);
+
+        setTheme(R.style.Theme_ProjetoCM);
         setContentView(R.layout.start_page);
 
         if (getSupportActionBar() != null)
