@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
         <activity
+            android:name=".LoadingPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".GuestLoginActivity"
             android:exported="false" />
         <activity

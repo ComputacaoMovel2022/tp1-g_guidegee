@@ -24,4 +24,10 @@ public class LoginPageActivity extends AppCompatActivity {
         startActivity(new Intent(LoginPageActivity.this, AccountTypeActivity.class));
         finish();
     }
+
+    public void loadingPageClick(View view)
+    {
+        startActivity(new Intent(LoginPageActivity.this, LoadingPageActivity.class));
+        finish();
+    }
 }
