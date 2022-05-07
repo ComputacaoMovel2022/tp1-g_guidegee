@@ -19,6 +19,12 @@ public class AccountTypeActivity extends AppCompatActivity {
         }
     }
 
+    public void guideSignUpClick(View view)
+    {
+        startActivity(new Intent(AccountTypeActivity.this, GuideSignUpActivity.class));
+        finish();
+    }
+
     public void refugeeSignUpClick(View view)
     {
         startActivity(new Intent(AccountTypeActivity.this, RefugeeSignUpActivity.class));

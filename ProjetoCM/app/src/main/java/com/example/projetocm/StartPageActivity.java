@@ -20,6 +20,12 @@ public class StartPageActivity extends AppCompatActivity {
         }
     }
 
+    public void guestLoginClick(View view)
+    {
+        startActivity(new Intent(StartPageActivity.this, GuestLoginActivity.class));
+        finish();
+    }
+
     public void typeOfAccountClick(View view)
     {
         startActivity(new Intent(StartPageActivity.this, AccountTypeActivity.class));
