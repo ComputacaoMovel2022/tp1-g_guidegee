@@ -16,7 +16,7 @@ public class StartPageActivity extends AppCompatActivity {
         //apenas para teste pois a app inicia demasiado rapido
         //TODO: mudar a cor do background da splashscreen para branco (ta preto em light mode)
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

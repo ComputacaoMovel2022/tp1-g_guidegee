@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjetoCM</string>
+    <string name="app_name">GuideGee</string>
     <string name="guest_sign"><u>Sign as Guest</u></string>
     <string name="sign_up"><u>Sign Up</u></string>
     <string name="title_activity_loading_page">LoadingPageActivity</string>

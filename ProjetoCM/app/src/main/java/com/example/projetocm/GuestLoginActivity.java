@@ -2,7 +2,9 @@ package com.example.projetocm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class GuestLoginActivity extends AppCompatActivity {
 
@@ -17,6 +19,10 @@ public class GuestLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    public void loadingPageClick(View view)
+    {
+        startActivity(new Intent(GuestLoginActivity.this, LoadingPageActivity.class));
+        finish();
+    }
 
 }
