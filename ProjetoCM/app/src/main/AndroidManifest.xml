@@ -32,7 +32,20 @@
             android:exported="false" />
         <activity
             android:name=".StartPageActivity"
-            android:theme="@style/SplashTheme"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.ProjetoCM.NoActionBar" />
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
