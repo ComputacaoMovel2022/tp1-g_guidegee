@@ -6,19 +6,23 @@
     android:layout_height="match_parent">
 
     <FrameLayout
+        android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="373dp">
+        android:layout_marginBottom="340dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/imageView11"
             android:layout_width="96dp"
             android:layout_height="94dp"
             app:srcCompat="@drawable/empty_profile_icon" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -31,7 +35,10 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -47,9 +54,9 @@
             android:id="@+id/imageView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/arrow_back"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@drawable/arrow_back" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -57,9 +64,13 @@
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
         android:layout_height="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
-        app:srcCompat="@drawable/grey_rectangle"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/grey_rectangle" />
 
     <TextView
         android:id="@+id/textView"
@@ -75,19 +86,23 @@
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="162dp">
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/imageView12"
             android:layout_width="96dp"
             android:layout_height="94dp"
             app:srcCompat="@drawable/empty_profile_icon" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -99,10 +114,12 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="266dp">
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:id="@+id/imageView10"
@@ -121,48 +138,63 @@
             android:text="Refugee3445" />
     </FrameLayout>
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar3"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        android:layout_width="0dp"
-        android:layout_height="77dp"
-        android:layout_gravity="bottom"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:backgroundTint="@color/grey" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="47dp"
-        android:layout_height="39dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-        app:layout_constraintVertical_bias="0.578"
-        app:srcCompat="@drawable/search_guide_icon" />
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar3"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-        app:srcCompat="@drawable/home_icon" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="47dp"
+            android:layout_height="39dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginStart="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:layout_constraintVertical_bias="0.578"
+            app:srcCompat="@drawable/search_guide_icon" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
-        app:layout_constraintEnd_toEndOf="@+id/bottomAppBar3"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-        app:srcCompat="@drawable/profile_icon" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:srcCompat="@drawable/home_icon" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
+            app:layout_constraintEnd_toEndOf="@+id/bottomAppBar3"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:srcCompat="@drawable/profile_icon" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
