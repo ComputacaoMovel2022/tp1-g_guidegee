@@ -33,38 +33,6 @@
         app:layout_constraintTop_toBottomOf="@+id/gemailtext" />
 
     <EditText
-        android:id="@+id/gpass2text"
-        android:layout_width="302dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/rectangle_text_box"
-        android:ems="10"
-        android:hint="Confirm your password..."
-        android:inputType="textPersonName"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gpasstext" />
-
-    <EditText
-        android:id="@+id/gpasstext"
-        android:layout_width="302dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/rectangle_text_box"
-        android:ems="10"
-        android:hint="Insert a password..."
-        android:inputType="textPersonName"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gidtext" />
-
-    <EditText
         android:id="@+id/gemailtext"
         android:layout_width="302dp"
         android:layout_height="50dp"
@@ -142,11 +110,10 @@
         android:layout_width="209dp"
         android:layout_height="48dp"
         android:layout_marginStart="101dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="41dp"
         android:background="@drawable/rectangule_green_btn"
-        android:onClick="refugeeSignUpClick"
+        android:onClick="guideSignUpClick"
         android:text="Register"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -154,7 +121,38 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/gpasstext"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/rectangle_text_box"
+        android:ems="10"
+        android:hint="Insert a password..."
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gpass2text" />
+        app:layout_constraintTop_toBottomOf="@+id/gidtext" />
+
+    <EditText
+        android:id="@+id/gpass2text"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/rectangle_text_box"
+        android:ems="10"
+        android:hint="Confirm your password..."
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gpasstext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,10 +38,9 @@ public class LoadingPageActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                //Do what you want
                 i++;
                 mProgressBar.setProgress(100);
-                startActivity(new Intent(LoadingPageActivity.this, StartPageActivity.class));
+                startActivity(new Intent(LoadingPageActivity.this, HomeActivity.class));
                 finish();
             }
         };
