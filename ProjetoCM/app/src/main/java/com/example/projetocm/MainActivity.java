@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.refugee_history);
 
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
+        }
 
         simpleList = findViewById(R.id.refugeeHistoryList);
         System.out.println("GOT HERE");
