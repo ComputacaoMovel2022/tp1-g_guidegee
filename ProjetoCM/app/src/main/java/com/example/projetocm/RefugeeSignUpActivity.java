@@ -8,8 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+/*
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+*/
 
 public class RefugeeSignUpActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
@@ -44,7 +51,13 @@ public class RefugeeSignUpActivity extends AppCompatActivity {
         if(pass.equals(pass2))
         {
             User u = new User(username, email, pass);
-            mDatabase.child("User").child(u.getUserID()).setValue(u);
+            //mDatabase.child("User").child(u.getUserID()).setValue(u);
+            DAOUser daoUser = new DAOUser();
+            daoUser.add(u).addOnSuccessListener(suc -> {
+                Toast.makeText(this, "Record is inserted", Toast.LENGTH_SHORT).show();
+            }).addOnFailureListener(er -> {
+                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+            });
 
             startActivity(new Intent(RefugeeSignUpActivity.this, SuccessfulRegisterActivity.class));
             finish();

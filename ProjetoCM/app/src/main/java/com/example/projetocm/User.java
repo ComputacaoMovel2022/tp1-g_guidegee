@@ -1,7 +1,7 @@
 package com.example.projetocm;
 
 public class User {
-    private static int userID = 0;
+    private static int userID = 1;
     private String username;
     private String email;
     private String password;
