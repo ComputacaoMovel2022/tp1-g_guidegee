@@ -1,24 +1,29 @@
 package com.example.projetocm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class GuideSignUpActivity extends AppCompatActivity {
-    private DatabaseReference mDatabase;
+    private DAOUser daoUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.guide_sign_up);
-        mDatabase = FirebaseDatabase.getInstance("https://guidegee-476d1-default-rtdb.europe-west1.firebasedatabase.app").getReference();
+        daoUser = new DAOUser();
 
         if (getSupportActionBar() != null)
         {
@@ -47,7 +52,24 @@ public class GuideSignUpActivity extends AppCompatActivity {
         if(pass.equals(pass2))
         {
             User u = new User(username, email, pass, id);
-            mDatabase.child("User").child(u.getUserID()).setValue(u);
+            //mDatabase.child("User").child(u.getUserID()).setValue(u);
+            String key = daoUser.generateNewKey();
+            daoUser.set(key, u);
+            daoUser.addUserToList(key, "Item 1");
+            daoUser.addUserToList(key, "Item 2");
+            daoUser.addUserToList(key, "Item 3");
+
+            daoUser.getUser(key, new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    } else {
+                        System.out.println("FOUND USER SUCESSFULLY");
+                        daoUser.addUserToList(key, "Item 69");
+                    }
+                }
+            });
 
             startActivity(new Intent(GuideSignUpActivity.this, SuccessfulRegisterActivity.class));
             finish();

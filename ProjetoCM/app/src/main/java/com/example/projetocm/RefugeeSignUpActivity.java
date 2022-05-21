@@ -19,14 +19,14 @@ import com.google.firebase.database.FirebaseDatabase;
 */
 
 public class RefugeeSignUpActivity extends AppCompatActivity {
-    private DatabaseReference mDatabase;
+    private DAOUser daoUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.refugee_sign_up);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        daoUser = new DAOUser();
 
         if (getSupportActionBar() != null)
         {
@@ -52,12 +52,8 @@ public class RefugeeSignUpActivity extends AppCompatActivity {
         {
             User u = new User(username, email, pass);
             //mDatabase.child("User").child(u.getUserID()).setValue(u);
-            DAOUser daoUser = new DAOUser();
-            daoUser.add(u).addOnSuccessListener(suc -> {
-                Toast.makeText(this, "Record is inserted", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(er -> {
-                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-            });
+
+            daoUser.add(u);
 
             startActivity(new Intent(RefugeeSignUpActivity.this, SuccessfulRegisterActivity.class));
             finish();
