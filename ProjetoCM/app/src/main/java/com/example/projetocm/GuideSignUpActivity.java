@@ -9,11 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class GuideSignUpActivity extends AppCompatActivity {
     private DAOUser daoUser;
@@ -59,15 +57,18 @@ public class GuideSignUpActivity extends AppCompatActivity {
             daoUser.addUserToList(key, "Item 2");
             daoUser.addUserToList(key, "Item 3");
 
-            daoUser.getUser(key, new OnCompleteListener<DataSnapshot>() {
+            daoUser.getDataSnapshotOnce(new ValueEventListener() {
                 @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (!task.isSuccessful()) {
-                        Log.e("firebase", "Error getting data", task.getException());
-                    } else {
-                        System.out.println("FOUND USER SUCESSFULLY");
-                        daoUser.addUserToList(key, "Item 69");
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.child(key).exists()) {
+                        System.out.println("FOUND USER!!! key: " + key);
+                        daoUser.addUserToList(key, "Item 74");
                     }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    System.err.println(error.getMessage());
                 }
             });
 

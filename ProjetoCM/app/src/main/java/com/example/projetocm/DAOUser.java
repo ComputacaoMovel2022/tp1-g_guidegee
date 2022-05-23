@@ -37,15 +37,37 @@ public class DAOUser {
     }
 
     /**
-     * Returns a SINGLE user based on a key.
-     * Do not use this method multiple times in a row, like in a for loop.
-     * Doing this may cause performance issues. Instead, use a real time listener.
+     * The snapshot returns a full view of the User table.
+     * More info on what you can do with the snapshot:
+     * https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot
      *
-     * @param key The key of the user you want to search for in the database.
-     * @param onCompleteListener The listener which will execute when it finishes the search.
+     * Best used if you want to keep a list updated with new users.
+     * Other sessions may add new refugees or new guides, so the database will be updated
+     * with new information.
+     * This method helps with making sure the list is up to date with all the info in the database.
+     *
+     * TL;DR: Use this method if you just want to update the UI.
+     *
+     * @param valueEventListener
      */
-    public void getUser(String key, OnCompleteListener<DataSnapshot> onCompleteListener) {
-        databaseReference.child(key).get().addOnCompleteListener(onCompleteListener);
+    public void getDataSnapshotWhenChanged(ValueEventListener valueEventListener) {
+        databaseReference.addValueEventListener(valueEventListener);
+    }
+
+    /**
+     * The snapshot returns a full view of the User table.
+     * More info on what you can do with the snapshot:
+     * https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot
+     *
+     * Best used if you want to change/add values inside users.
+     * If you use the getDataSnapshotWhenChanged to change something inside a user, it will
+     * loop endlessly because the value keeps getting changed. Don't make this mistake.
+     * Instead, use this method which will only execute once.
+     *
+     * @param valueEventListener
+     */
+    public void getDataSnapshotOnce(ValueEventListener valueEventListener) {
+        databaseReference.addListenerForSingleValueEvent(valueEventListener);
     }
 
     /**
@@ -62,6 +84,11 @@ public class DAOUser {
         return databaseReference.child(mainUserKey).child(ALL_ASSOCIATED_USERS_ATTRIBUTE).push().setValue(associatedUserKey);
     }
 
+    /**
+     * Adds a new, empty user to the database.
+     * Make sure to fill it with values by using the set method.
+     * @return
+     */
     public String generateNewKey() {
         return databaseReference.push().getKey();
     }
