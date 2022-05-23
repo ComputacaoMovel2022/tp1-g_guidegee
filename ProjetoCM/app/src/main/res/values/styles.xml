@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     <!-- Your History -->
     <style name="your_histor">
 
@@ -29,9 +26,5 @@
         </item>
 
     </style>
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
 </resources>
