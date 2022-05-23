@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
     tools:context=".MainActivity">
+=======
+    tools:context=".GuideHistory">
+>>>>>>> Stashed changes
 
     <!-- Head Line -->
 
@@ -18,7 +22,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
+<<<<<<< Updated upstream
         android:layout_width="418dp"
+=======
+        android:layout_width="match_parent"
+>>>>>>> Stashed changes
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +35,11 @@
         <View
             android:id="@+id/head_line"
             android:layout_width="match_parent"
+<<<<<<< Updated upstream
             android:layout_height="100dp"
+=======
+            android:layout_height="match_parent"
+>>>>>>> Stashed changes
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/head_line"
@@ -52,6 +64,7 @@
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+<<<<<<< Updated upstream
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="423dp"
@@ -136,6 +149,33 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+=======
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHistory"
+        app:layout_constraintVertical_bias="0.6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="191dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="342dp"
+                android:layout_height="85dp">
+>>>>>>> Stashed changes
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -158,7 +198,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
+<<<<<<< Updated upstream
                     android:id="@+id/button2"
+=======
+                    android:id="@+id/button"
+>>>>>>> Stashed changes
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
@@ -171,6 +215,7 @@
                     tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+<<<<<<< Updated upstream
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -185,6 +230,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+=======
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="342dp"
+                android:layout_height="85dp">
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/joana_marti"
@@ -200,7 +251,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
+<<<<<<< Updated upstream
                     android:id="@+id/button5"
+=======
+                    android:id="@+id/button"
+>>>>>>> Stashed changes
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
@@ -221,6 +276,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ellipse_24" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+<<<<<<< Updated upstream
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -235,6 +291,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+=======
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="342dp"
+                android:layout_height="85dp">
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/habibi_ali"
@@ -251,7 +314,11 @@
 
 
                 <Button
+<<<<<<< Updated upstream
                     android:id="@+id/button6"
+=======
+                    android:id="@+id/button"
+>>>>>>> Stashed changes
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
@@ -270,6 +337,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+<<<<<<< Updated upstream
                     app:srcCompat="@drawable/ellipse_21" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -292,6 +360,20 @@
                     android:id="@+id/mohammed_hu"
                     android:layout_width="120dp"
                     android:layout_height="55dp"
+=======
+                    app:srcCompat="@drawable/ellipse_25" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="342dp"
+                android:layout_height="85dp">
+
+                <TextView
+                    android:id="@+id/mohammed_hu"
+                    android:layout_width="157dp"
+                    android:layout_height="52dp"
+>>>>>>> Stashed changes
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
@@ -303,7 +385,11 @@
                     app:layout_constraintVertical_bias="0.492" />
 
                 <Button
+<<<<<<< Updated upstream
                     android:id="@+id/button7"
+=======
+                    android:id="@+id/button"
+>>>>>>> Stashed changes
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
@@ -324,20 +410,27 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ellipse_22" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+<<<<<<< Updated upstream
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="420dp"
             android:layout_height="82dp">
+=======
+>>>>>>> Stashed changes
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
                 android:layout_width="342dp"
+<<<<<<< Updated upstream
                 android:layout_height="85dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+=======
+                android:layout_height="85dp">
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/ruben_pina"
@@ -374,8 +467,79 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ellipse_23" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+<<<<<<< Updated upstream
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
+=======
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutHistory"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rectangle_6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/your_histor"
+            android:layout_width="247dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+
+            android:gravity="center_horizontal|top"
+            android:text="@string/your_histor"
+            android:textAppearance="@style/your_histor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rectangle_6"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_6"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_6"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+        <View
+            android:id="@+id/foot_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/foot_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>

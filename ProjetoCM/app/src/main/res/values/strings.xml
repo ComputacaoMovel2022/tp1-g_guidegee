@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">ProjetoCM</string>
 
+<<<<<<< Updated upstream
+=======
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="best_guides">Best Guides</string>
+    <string name="_1">1</string>
+    <string name="_50_7">50,7</string>
+    <string name="_2">2</string>
+    <string name="andr_lisboa">André Lisboa</string>
+    <string name="_44_5">44,5</string>
+
+>>>>>>> Stashed changes
     <string name="your_histor">Your History</string>
     <string name="jo_o_morais">João Morais</string>
     <string name="joana_marti">Joana Martins</string>
@@ -8,6 +21,10 @@
     <string name="mohammed_hu">Mohammed Hudidi</string>
     <string name="ruben_pina">Ruben Pina</string>
     <string name="exName">example</string>
+<<<<<<< Updated upstream
 
 
+=======
+    <string name="logText">LogText</string>
+>>>>>>> Stashed changes
 </resources>
