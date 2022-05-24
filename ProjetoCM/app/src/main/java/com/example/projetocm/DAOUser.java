@@ -20,7 +20,7 @@ public class DAOUser {
 
     public DAOUser() {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://guidegee-476d1-default-rtdb.europe-west1.firebasedatabase.app");
-        databaseReference = db.getReference(User.class.getSimpleName());
+        databaseReference = db.getReference(User.class.getSimpleName()); //"User"
 
     }
 
@@ -105,5 +105,9 @@ public class DAOUser {
      */
     public String generateNewKey() {
         return databaseReference.push().getKey();
+    }
+
+    public DatabaseReference getDatabaseReference() {
+        return databaseReference;
     }
 }
