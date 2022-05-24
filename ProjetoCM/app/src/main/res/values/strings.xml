@@ -18,7 +18,10 @@
     <string name="mohammed_hu">Mohammed Hudidi</string>
     <string name="ruben_pina">Ruben Pina</string>
     <string name="exName">example</string>
-
+    <string name="review_page">Review Page</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="review">Review</string>
 
     <string name="logText">LogText</string>
 

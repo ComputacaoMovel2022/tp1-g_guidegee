@@ -16,42 +16,6 @@
 
     <!-- Foot Line -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <View
-            android:id="@+id/head_line"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/head_line"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <View
-            android:id="@+id/arrow_2"
-            android:layout_width="53dp"
-            android:layout_height="44dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/arrow_2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.068"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -74,7 +38,7 @@
             tools:layout_editor_absoluteY="191dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
+                android:id="@+id/constraintLayout31"
                 android:layout_width="342dp"
                 android:layout_height="85dp">
 
@@ -85,11 +49,12 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ellipse_20" />
+                    app:srcCompat="@drawable/ellipse_20"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/jo_o_morais"
-                    android:layout_width="137dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="42dp"
                     android:gravity="center"
                     android:text="@string/jo_o_morais"
@@ -99,11 +64,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonReview1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,15 +78,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
+                android:id="@+id/constraintLayout32"
                 android:layout_width="342dp"
                 android:layout_height="85dp">
 
                 <TextView
                     android:id="@+id/joana_marti"
-                    android:layout_width="136dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="31dp"
-                    android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="@string/joana_marti"
@@ -131,11 +95,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonReview2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -150,19 +114,19 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ellipse_24" />
+                    app:srcCompat="@drawable/ellipse_24"
+                    tools:ignore="ContentDescription" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
+                android:id="@+id/constraintLayout33"
                 android:layout_width="342dp"
                 android:layout_height="85dp">
 
                 <TextView
                     android:id="@+id/habibi_ali"
-                    android:layout_width="103dp"
-                    android:layout_height="27dp"
-                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="@string/habibi_ali"
@@ -173,11 +137,11 @@
 
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonReview3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -192,19 +156,19 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ellipse_21" />
+                    app:srcCompat="@drawable/ellipse_21"
+                    tools:ignore="ContentDescription" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
+                android:id="@+id/constraintLayout34"
                 android:layout_width="342dp"
                 android:layout_height="85dp">
 
                 <TextView
                     android:id="@+id/mohammed_hu"
-                    android:layout_width="157dp"
-                    android:layout_height="52dp"
-                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="@string/mohammed_hu"
@@ -215,11 +179,11 @@
                     app:layout_constraintVertical_bias="0.492" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonReview4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -234,19 +198,19 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ellipse_22" />
+                    app:srcCompat="@drawable/ellipse_22"
+                    tools:ignore="ContentDescription" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
+                android:id="@+id/constraintLayout35"
                 android:layout_width="342dp"
                 android:layout_height="85dp">
 
                 <TextView
                     android:id="@+id/ruben_pina"
-                    android:layout_width="119dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="31dp"
-                    android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="@string/ruben_pina"
@@ -256,11 +220,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonReview5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#C4C4C4"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -275,11 +239,46 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ellipse_23" />
+                    app:srcCompat="@drawable/ellipse_23"
+                    tools:ignore="ContentDescription" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/head_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/head_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/arrow_2"
+            android:layout_width="53dp"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/arrow_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutHistory"
@@ -294,7 +293,6 @@
             android:id="@+id/rectangle_6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/rectangle_6"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -307,7 +305,6 @@
             android:id="@+id/your_histor"
             android:layout_width="247dp"
             android:layout_height="31dp"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
 
             android:gravity="center_horizontal|top"
@@ -336,7 +333,6 @@
             android:id="@+id/foot_line"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/foot_line"
             app:layout_constraintBottom_toBottomOf="parent"
