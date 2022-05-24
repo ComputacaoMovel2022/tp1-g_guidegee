@@ -1,7 +1,34 @@
 <resources>
-    <string name="app_name">ProjetoCM</string>
     <string name="requests_for_guidance">Requests for guidance</string>
     <string name="accept">Accept</string>
     <string name="decline">Decline</string>
     <string name="your_history">Your History</string>
+    <string name="app_name">GuideGee</string>
+    <string name="guest_sign"><u>Sign as Guest</u></string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="title_activity_loading_page">LoadingPageActivity</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="turn_off_notifications">Turn Off Notifications</string>
+    <string name="helprange">Help Range</string>
+    <string name="availability">Availability</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="language">Language</string>
+    <string name="languagecountry">Language Country</string>
+    <string name="title_activity_home">Home</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="best_guides">Best Guides</string>
+    <string name="_1">1</string>
+    <string name="jo_o_morais">João Morais</string>
+    <string name="_50_7">50,7</string>
+    <string name="_2">2</string>
+    <string name="andr_lisboa">André Lisboa</string>
+    <string name="_44_5">44,5</string>
 </resources>

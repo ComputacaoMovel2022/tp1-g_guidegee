@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".Settings">
+
+    <LinearLayout
+        android:layout_width="347dp"
+        android:layout_height="234dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/DeleteAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.545">
+
+        <Switch
+            android:id="@+id/DarkMode"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:minHeight="48dp"
+            android:text="@string/dark_mode"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Language"
+                android:layout_width="135dp"
+                android:layout_height="47dp"
+                android:layout_marginBottom="28dp"
+                android:text="@string/language"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <Spinner
+                android:id="@+id/LanguageChoice"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:contentDescription="@string/languagecountry"
+                app:strokeWidth="48dp"
+                app:strokeColor="@color/black"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="414dp"
+        android:layout_height="114dp"
+        android:background="#E1E1E1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="351dp"
+        android:layout_height="244dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262">
+
+        <Switch
+            android:id="@+id/Notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:minHeight="48dp"
+            android:text="@string/turn_off_notifications"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/AvailabilityChoice"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/availability"
+            android:visibility="visible"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Distance"
+                android:layout_width="90dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/helprange"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <Spinner
+                android:id="@+id/DistanceChoice"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/app_name" />
+
+            <Spinner
+                android:id="@+id/UnityChoice"
+                android:layout_width="108dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/app_name"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/DeleteAccount"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FF0000"
+        android:foregroundTint="#FF0000"
+        android:text="@string/delete_account"
+        android:textColor="#DD2C00"
+        app:cornerRadius="@android:dimen/thumbnail_width"
+        app:iconTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FF0000"
+        app:strokeColor="#FF0000"
+        app:strokeWidth="3.5dp"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

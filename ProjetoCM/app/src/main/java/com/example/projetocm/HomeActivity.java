@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     int[] profilePictures = {R.drawable.test_profile_pic, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon};
     String[] profileNames = {"Mariana Gustavo", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio"};
@@ -26,5 +26,6 @@ public class MainActivity extends AppCompatActivity {
         SimplifiedProfileItem simplifiedProfileItem = new SimplifiedProfileItem(getApplicationContext(), R.layout.refugee_history_list_element, profileNames, profilePictures);
         simpleList.setAdapter(simplifiedProfileItem);
 
+        //setContentView(R.layout.activity_home);
     }
 }
