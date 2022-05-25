@@ -20,6 +20,6 @@
         </activity>
         <activity android:name=".RatingGuide"
             android:parentActivityName=".MainActivity"/>
-    </application>
+        </application>
 
 </manifest>

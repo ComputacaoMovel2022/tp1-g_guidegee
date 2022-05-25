@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-
-
     int[] profilePictures = {R.drawable.ellipse_20, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon};
     String[] profileNames = {"João Morais", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio"};
     ListView simpleList;
@@ -24,32 +22,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Lista de Guias
         simpleList = findViewById(R.id.guidesListView);
-        SimplifiedProfileItem simplifiedProfileItem = new SimplifiedProfileItem(getApplicationContext(), R.layout.guide_history_list_element, profileNames, profilePictures);
-        simpleList.setAdapter(simplifiedProfileItem);
+        ListAdapterGuideHistory listAdapterGuideHistoryGuide = new ListAdapterGuideHistory(getApplicationContext(), R.layout.guide_history_list_element, profileNames, profilePictures);
+        listAdapterGuideHistoryGuide.sendContext(this);
+        simpleList.setAdapter(listAdapterGuideHistoryGuide);
 
-    /*
-        //Butão Review
-        Button reviewGuideButton = (Button) findViewById(R.id.buttonReview1);
-        reviewGuideButton.setOnClickListener(new View.OnClickListener() {
+        View goBackButton = (View) findViewById(R.id.arrow_2);
+        goBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent itRatingGuide = new Intent(MainActivity.this,RatingGuide.class);
-                itRatingGuide.putExtra("guideName","Ricardo");
-                startActivity(itRatingGuide);
+                //Go to Home_page
             }
         });
-    */
-
-
     }
 
-
-
-//    public void openRatingPage(View v){
-//        Intent itRatingGuide = new Intent(this,RatingGuide.class);
-//        itRatingGuide.putExtra("guideName","Ricardo");
-//        startActivity(itRatingGuide);
-//    }
-
-    
 }

@@ -1,10 +1,13 @@
 package com.example.projetocm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +19,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Everything else in the passed layout remains unchanged.
  * Pages it can be used for: Guide History, Refugee History, Message List
  */
-public class SimplifiedProfileItem extends BaseAdapter {
+
+public class ListAdapterGuideHistory extends BaseAdapter{
 
     private Context context;
     private String[] profileItemNames;
@@ -24,7 +28,8 @@ public class SimplifiedProfileItem extends BaseAdapter {
     private LayoutInflater inflater;
     private int itemLayout;
 
-    public SimplifiedProfileItem(Context applicationContext, int itemLayout, String[] profileNames, int[] profilePictures) {
+
+    public ListAdapterGuideHistory(Context applicationContext, int itemLayout, String[] profileNames, int[] profilePictures) {
         this.context = applicationContext;
         this.profileItemNames = profileNames;
         this.profileItemPictures = profilePictures;
@@ -49,13 +54,39 @@ public class SimplifiedProfileItem extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolder holder;
+        holder = new ViewHolder();
         view = inflater.inflate(itemLayout, null);
-        TextView profileName = view.findViewById(R.id.profileName);
-        CircleImageView profileIcon = view.findViewById(R.id.profileIcon);
 
-        profileName.setText(profileItemNames[i]);
-        profileIcon.setImageResource(profileItemPictures[i]);
+        holder.profileName = view.findViewById(R.id.profileName);
+        holder.profileIcon = view.findViewById(R.id.profileIcon);
+        holder.reviewButton = (Button) view.findViewById (R.id.buttonReview);
+
+
+        holder.profileName.setText(profileItemNames[i]);
+        holder.profileIcon.setImageResource(profileItemPictures[i]);
+        holder.reviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent itRatingGuide = new Intent(context,RatingGuide.class);
+                itRatingGuide.putExtra("guideName",holder.profileName.getText().toString());
+                 context.startActivity(itRatingGuide);
+            }
+
+        });
+
 
         return view;
     }
+
+    public void sendContext(Context context){
+        this.context = context;
+    }
+
+    class ViewHolder {
+        TextView profileName;
+        CircleImageView profileIcon;
+        Button reviewButton;
+    }
+
 }
