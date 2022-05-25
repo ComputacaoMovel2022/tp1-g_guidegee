@@ -152,14 +152,13 @@
                     android:labelFor="@id/spinner2"
                     android:text="@string/choose_languages_you_know" />
 
-            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                <TextView
                     android:id="@+id/spinner2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/corner"
-                    android:minHeight="48dp"
-                    tools:ignore="DuplicateSpeakableTextCheck,MissingClass"/>
+                    android:minHeight="48dp"/>
 
             </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
