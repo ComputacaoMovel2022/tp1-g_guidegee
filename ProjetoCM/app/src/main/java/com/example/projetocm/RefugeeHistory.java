@@ -63,8 +63,8 @@ public class RefugeeHistory extends AppCompatActivity {
                 }
 
 
-                SimplifiedProfileItem simplifiedProfileItem = new SimplifiedProfileItem(getApplicationContext(), R.layout.refugee_history_list_element, allHistoryRefugees);
-                listView.setAdapter(simplifiedProfileItem);
+                SimplifiedProfileItemAdapter simplifiedProfileItemAdapter = new SimplifiedProfileItemAdapter(getApplicationContext(), R.layout.refugee_history_list_element, allHistoryRefugees);
+                listView.setAdapter(simplifiedProfileItemAdapter);
             }
 
             @Override

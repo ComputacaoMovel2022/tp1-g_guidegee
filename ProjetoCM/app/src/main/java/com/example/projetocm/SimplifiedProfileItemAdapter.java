@@ -1,6 +1,7 @@
 package com.example.projetocm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +21,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Everything else in the passed layout remains unchanged.
  * Pages it can be used for: Guide History, Refugee History, Message List
  */
-public class SimplifiedProfileItem extends BaseAdapter {
+public class SimplifiedProfileItemAdapter extends BaseAdapter {
 
     private Context context;
     private List<User> allUsers;
     private LayoutInflater inflater;
     private int itemLayout;
 
-    public SimplifiedProfileItem(Context applicationContext, int itemLayout, List<User> allUsers) {
+    public SimplifiedProfileItemAdapter(Context applicationContext, int itemLayout, List<User> allUsers) {
         this.context = applicationContext;
         this.allUsers = allUsers;
         inflater = LayoutInflater.from(applicationContext);
@@ -67,7 +68,8 @@ public class SimplifiedProfileItem extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Intent intent = new Intent(HomeActivity.this)
+                //context.startActivity(new Intent());
             }
         });
 
