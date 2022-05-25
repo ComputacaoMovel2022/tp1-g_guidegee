@@ -8,6 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -19,22 +23,20 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SimplifiedProfileItem extends BaseAdapter {
 
     private Context context;
-    private String[] profileItemNames;
-    private int[] profileItemPictures;
+    private List<User> allUsers;
     private LayoutInflater inflater;
     private int itemLayout;
 
-    public SimplifiedProfileItem(Context applicationContext, int itemLayout, String[] profileNames, int[] profilePictures) {
+    public SimplifiedProfileItem(Context applicationContext, int itemLayout, List<User> allUsers) {
         this.context = applicationContext;
-        this.profileItemNames = profileNames;
-        this.profileItemPictures = profilePictures;
+        this.allUsers = allUsers;
         inflater = LayoutInflater.from(applicationContext);
         this.itemLayout = itemLayout;
     }
 
     @Override
     public int getCount() {
-        return profileItemNames.length;
+        return 0;
     }
 
     @Override
@@ -53,8 +55,21 @@ public class SimplifiedProfileItem extends BaseAdapter {
         TextView profileName = view.findViewById(R.id.profileName);
         CircleImageView profileIcon = view.findViewById(R.id.profileIcon);
 
-        profileName.setText(profileItemNames[i]);
-        profileIcon.setImageResource(profileItemPictures[i]);
+        profileName.setText(allUsers.get(i).getUsername());
+
+        if (allUsers.get(i).getImageURL() == null || allUsers.get(i).getImageURL().equals("")) {
+            profileIcon.setImageResource(R.drawable.empty_profile_icon);
+        } else {
+            Picasso.get().load(allUsers.get(i).getImageURL()).into(profileIcon);
+        }
+
+        // TODO: Open the profile page when the button is clicked
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         return view;
     }

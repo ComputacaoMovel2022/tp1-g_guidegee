@@ -14,18 +14,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.refugee_history);
-
-        if (getSupportActionBar() != null)
-        {
-            getSupportActionBar().hide();
-        }
-
-        simpleList = findViewById(R.id.refugeeHistoryList);
-        System.out.println("GOT HERE");
-        SimplifiedProfileItem simplifiedProfileItem = new SimplifiedProfileItem(getApplicationContext(), R.layout.refugee_history_list_element, profileNames, profilePictures);
-        simpleList.setAdapter(simplifiedProfileItem);
-
-        //setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home);
     }
 }
