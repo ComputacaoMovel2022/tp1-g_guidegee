@@ -17,6 +17,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.userGuide = false;
+        this.imageURL = "";
     }
 
     public User(String username, String email, String password,
@@ -29,6 +30,7 @@ public class User {
         this.userGuide = true;
         this.ratingScore = 0;
         this.numOfPplHelped = 0;
+        this.imageURL = "";
     }
 
     public String getUserKey() {
