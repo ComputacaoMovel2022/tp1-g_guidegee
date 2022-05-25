@@ -1,4 +1,8 @@
 <resources>
+    <string name="requests_for_guidance">Requests for guidance</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="your_history">Your History</string>
     <string name="app_name">GuideGee</string>
     <string name="guest_sign"><u>Sign as Guest</u></string>
     <string name="sign_up"><u>Sign Up</u></string>
