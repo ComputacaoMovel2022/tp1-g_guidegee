@@ -38,4 +38,21 @@
     <string name="password">Password:</string>
     <string name="confirm_password">Confirm Password:</string>
     <string name="choose_languages_you_know">Choose languages you know:</string>
+    <string name="distance_choice">Distance Choice</string>
+    <string name="distance_choice_unity">Distance choice unity</string>
+    <string-array name="UnityChoice">
+        <item>Km</item>
+        <item>mi</item>
+    </string-array>
+    <string-array name="DistanceChoice">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
 </resources>

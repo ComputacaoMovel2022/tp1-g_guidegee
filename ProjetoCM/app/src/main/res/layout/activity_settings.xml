@@ -9,8 +9,9 @@
     tools:context=".Settings">
 
     <LinearLayout
-        android:layout_width="347dp"
-        android:layout_height="234dp"
+        android:layout_width="345dp"
+        android:layout_height="160dp"
+        android:background="@drawable/corner_white"
         android:clipToPadding="false"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/DeleteAccount"
@@ -22,7 +23,7 @@
 
         <Switch
             android:id="@+id/DarkMode"
-            android:layout_width="match_parent"
+            android:layout_width="345dp"
             android:layout_height="70dp"
             android:minHeight="48dp"
             android:text="@string/dark_mode"
@@ -46,8 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:contentDescription="@string/languagecountry"
-                app:strokeWidth="48dp"
                 app:strokeColor="@color/black"
+                app:strokeWidth="48dp"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
@@ -72,7 +73,8 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="351dp"
-        android:layout_height="244dp"
+        android:layout_height="225dp"
+        android:background="@drawable/corner_white"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +86,7 @@
             android:id="@+id/Notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:minHeight="48dp"
             android:text="@string/turn_off_notifications"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -95,6 +97,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
             android:text="@string/availability"
+            android:textAlignment="textStart"
             android:visibility="visible"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -109,7 +112,7 @@
                 android:layout_height="37dp"
                 android:layout_marginTop="28dp"
                 android:text="@string/helprange"
-                android:textAlignment="textStart"
+                android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
             <Spinner
@@ -117,14 +120,14 @@
                 android:layout_width="140dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
-                android:contentDescription="@string/app_name" />
+                android:contentDescription="@string/distance_choice" />
 
             <Spinner
                 android:id="@+id/UnityChoice"
                 android:layout_width="108dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
-                android:contentDescription="@string/app_name"
+                android:contentDescription="@string/distance_choice_unity"
                 tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>
 

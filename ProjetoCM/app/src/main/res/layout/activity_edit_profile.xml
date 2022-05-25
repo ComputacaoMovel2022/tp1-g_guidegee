@@ -54,7 +54,6 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="@drawable/corner_white"
-            android:text="@string/textview"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -112,7 +111,6 @@
             android:background="@drawable/corner"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/name"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
@@ -148,21 +146,20 @@
             android:ems="10"
             android:inputType="textPassword"
             tools:ignore="DuplicateSpeakableTextCheck" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/spinner2"
+                    android:text="@string/choose_languages_you_know" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:labelFor="@id/spinner2"
-            android:text="@string/choose_languages_you_know" />
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                    android:id="@+id/spinner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner"
+                    android:minHeight="48dp"
+                    tools:ignore="DuplicateSpeakableTextCheck,MissingClass"/>
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/corner"
-            android:minHeight="48dp"
-            tools:ignore="DuplicateSpeakableTextCheck" />
+            </LinearLayout>
 
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
