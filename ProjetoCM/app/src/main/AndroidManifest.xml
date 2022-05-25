@@ -35,6 +35,11 @@
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ProjetoCM.NoActionBar" />
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
         <activity
             android:name=".Settings"
             android:exported="false" />
