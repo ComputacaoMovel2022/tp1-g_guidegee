@@ -37,12 +37,9 @@ public class RatingGuide extends AppCompatActivity {
             public void onClick(View v) {
                 float ratingValue = simpleRatingBar.getRating();
 
-                /*
                 Toast.makeText(getApplicationContext(),
                         "Nome do Guia:"+guideName,
                         Toast.LENGTH_LONG).show();
-
-                 */
             }
         });
 

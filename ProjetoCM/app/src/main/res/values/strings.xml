@@ -23,6 +23,9 @@
     <string name="back">Back</string>
     <string name="review">Review</string>
 
+    <string name="msgBoxHint">Write your message here.</string>
+    <string name="textExample">Texto de Exemplo</string>
+
     <string name="logText">LogText</string>
 
 </resources>

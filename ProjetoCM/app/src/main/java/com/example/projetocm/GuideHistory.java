@@ -22,6 +22,14 @@ public class GuideHistory extends AppCompatActivity {
         ListAdapterGuideHistory listAdapterGuideHistoryGuide = new ListAdapterGuideHistory(getApplicationContext(), R.layout.guide_history_list_element, profileNames, profilePictures);
         listAdapterGuideHistoryGuide.sendContext(this);
         simpleList.setAdapter(listAdapterGuideHistoryGuide);
+
+        View goBackButton = (View) findViewById(R.id.arrow_2);
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Go to Home_page
+            }
+        });
     }
 
  */
