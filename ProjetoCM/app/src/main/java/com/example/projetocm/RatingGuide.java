@@ -1,5 +1,6 @@
 package com.example.projetocm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -10,10 +11,16 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 public class RatingGuide extends AppCompatActivity {
     //RatingBar simpleRatingBar = (RatingBar) findViewById(R.id.simpleRatingBar);
     //Button submitButton = (Button) findViewById(R.id.submitButton);
-    String guideName;
+    String guideKey;
+
+    DAOUser daoUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +28,10 @@ public class RatingGuide extends AppCompatActivity {
         setContentView(R.layout.rating_guide);
         getSupportActionBar().hide();
 
-        Intent it = getIntent();
-        guideName = it.getStringExtra("guideName");
+            Intent it = getIntent();
+            guideKey = it.getStringExtra("guideKey");
 
-
+        daoUser= new DAOUser();
 
 
         // initiate rating bar and a button
@@ -37,9 +44,38 @@ public class RatingGuide extends AppCompatActivity {
             public void onClick(View v) {
                 float ratingValue = simpleRatingBar.getRating();
 
-                Toast.makeText(getApplicationContext(),
-                        "Nome do Guia:"+guideName,
-                        Toast.LENGTH_LONG).show();
+
+                daoUser.getDataSnapshotOnce(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        /* ERRO -> UM UTILIZADOR PODE FAZER MILHOES DE REVIEWS DIFERENTES */
+                        User loggedUser = snapshot.child(guideKey).getValue(User.class);
+                        loggedUser.setUserKey(guideKey);
+
+
+                        // NUMOFPpleHelped ESTÁ ERRADO a varialvel tem o nome errado
+                        int numOfReview = loggedUser.getNumOfPplHelped();
+                        double reviewVal = loggedUser.getRatingScore();
+
+
+                        double finalReview = ((reviewVal/numOfReview)+ratingValue)/numOfReview+1;
+
+                        daoUser.setUserAttributeValue(guideKey,"ratingScore",finalReview);
+                        daoUser.setUserAttributeValue(guideKey,"numOfPplHelped",numOfReview+1);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+               /*
+                * Toast.makeText(getApplicationContext(),
+                *         "Nome do Guia:"+guideName,
+                *         Toast.LENGTH_LONG).show();
+                */
             }
         });
 
