@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="invalid_region_message">Não está na região de atividade deste guia!</string>
+    <string name="invalid_contact_guide">Contactar</string>
+    <string name="invalid_back_to_list">Rever Lista</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">GoogleMapsTestB</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="invalid_region_message">You\'re not within this guide\'s region of activity!</string>
+    <string name="invalid_contact_guide">Contact</string>
+    <string name="invalid_back_to_list">Review List</string>
+</resources>

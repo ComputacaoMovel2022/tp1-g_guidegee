@@ -34,8 +34,7 @@ public class RefugeeSignUpActivity extends AppCompatActivity {
         }
     }
 
-    public void refugeeSignUpClick(View view)
-    {
+    public void refugeeSignUpClick(View view) {
         EditText usernameText = (EditText) findViewById(R.id.rusernametext);
         String username = usernameText.getText().toString();
 
@@ -48,8 +47,7 @@ public class RefugeeSignUpActivity extends AppCompatActivity {
         EditText pass2Text = (EditText) findViewById(R.id.rpass2text);
         String pass2 = pass2Text.getText().toString();
 
-        if(pass.equals(pass2))
-        {
+        if(pass.equals(pass2)) {
             User u = new User(username, email, pass);
             //mDatabase.child("User").child(u.getUserID()).setValue(u);
 
