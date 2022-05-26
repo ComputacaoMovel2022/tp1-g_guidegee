@@ -1,8 +1,18 @@
 package com.example.projetocm;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,19 +24,37 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
-public class EditProfile extends AppCompatActivity {
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+public class EditProfile extends AppCompatActivity {
+    public static final int Camera_Action_CODE=1;
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
     String[] langArray = {"Portuguese", "French", "Spanish", "Russian", "English", "Mandarim", "Hindi"};
-
+    ActivityResultLauncher<Intent> activityResultLauncher;
+    Uri file;
+    StorageReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +62,51 @@ public class EditProfile extends AppCompatActivity {
         //if equal add edit page
         //else if
         setContentView(R.layout.activity_edit_profile);
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if(result.getResultCode() == RESULT_OK && result.getData() != null){
+                    Bundle bundle = result.getData().getExtras();
+                    file = result.getData().getData();
+                    ref = storageRef.child("images/"+file.getLastPathSegment());
+                    Bitmap bitmap = (Bitmap) bundle.get("data");
+                    userImage.setImageBitmap(bitmap);
+                }
+            }
+        });
+        userImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(intent.resolveActivity(getPackageManager()) != null){
+                    activityResultLauncher.launch(intent);
+                }
+            }
+        });
         Button saveChanges= (Button)findViewById(R.id.SaveEdits);
         saveChanges.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 //Save
+                if(file != null) {
+                    UploadTask uploadTask = ref.putFile(file);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            DAOUser daoUser= new DAOUser();
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"imageURL",ref.getDownloadUrl());
+                        }
+                    });
+                }
             }
         });
         Button cancelChanges= (Button)findViewById(R.id.CancelEdits);
@@ -47,6 +114,7 @@ public class EditProfile extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                finish();
                 //Cancel
             }
         });
@@ -132,4 +200,5 @@ public class EditProfile extends AppCompatActivity {
             }
         });
     }
+
 }
