@@ -26,9 +26,26 @@
 
     <string name="best_guides">Best Guides</string>
     <string name="_1">1</string>
-    <string name="jo_o_morais">João Morais</string>
     <string name="_50_7">50,7</string>
     <string name="_2">2</string>
     <string name="andr_lisboa">André Lisboa</string>
     <string name="_44_5">44,5</string>
+
+    <string name="your_histor">Your History</string>
+    <string name="jo_o_morais">João Morais</string>
+    <string name="joana_marti">Joana Martins</string>
+    <string name="habibi_ali">Habibi Ali</string>
+    <string name="mohammed_hu">Mohammed Hudidi</string>
+    <string name="ruben_pina">Ruben Pina</string>
+    <string name="exName">example</string>
+    <string name="review_page">Review Page</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="review">Review</string>
+
+    <string name="msgBoxHint">Write your message here.</string>
+    <string name="textExample">Texto de Exemplo</string>
+
+    <string name="logText">LogText</string>
+
 </resources>
