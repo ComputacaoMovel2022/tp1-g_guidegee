@@ -79,7 +79,6 @@ public class LoginPageActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(getApplicationContext(), "Login failed! Check credentials, please.", Toast.LENGTH_SHORT).show();
                         }
-                        mAuth.getCurrentUser().getUid()
                     }
                 });
 

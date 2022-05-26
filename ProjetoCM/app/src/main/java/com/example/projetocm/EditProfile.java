@@ -82,9 +82,11 @@ public class EditProfile extends AppCompatActivity {
         userImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("CLICKED ON IMAGE");
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if(intent.resolveActivity(getPackageManager()) != null){
                     activityResultLauncher.launch(intent);
+                    //startActivityForResult(intent, 1888);
                 }
             }
         });
@@ -211,5 +213,4 @@ public class EditProfile extends AppCompatActivity {
             }
         });
     }
-
 }

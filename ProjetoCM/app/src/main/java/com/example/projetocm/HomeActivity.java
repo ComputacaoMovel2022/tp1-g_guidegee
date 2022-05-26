@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void clickProfile(View view) {
-        startActivity(new Intent(HomeActivity.this, EditProfile.class));
-        finish();
+        Intent intent = new Intent(view.getContext(), EditProfile.class);
+        startActivity(intent);
     }
 }
