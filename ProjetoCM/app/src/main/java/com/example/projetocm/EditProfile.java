@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -62,6 +63,7 @@ public class EditProfile extends AppCompatActivity {
         //if equal add edit page
         //else if
         setContentView(R.layout.activity_edit_profile);
+        DAOUser daoUser= new DAOUser();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
         CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
@@ -102,11 +104,20 @@ public class EditProfile extends AppCompatActivity {
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            DAOUser daoUser= new DAOUser();
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"imageURL",ref.getDownloadUrl());
                         }
                     });
                 }
+                EditText personName =  (EditText) findViewById(R.id.editTextTextPersonName);
+                if(personName.getText().toString() != "" && personName.getText().toString() != null){
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"username",personName.getText().toString());
+                }
+                EditText password =  (EditText) findViewById(R.id.editTextTextPassword);
+                EditText passwordConfirm =  (EditText) findViewById(R.id.editTextTextPassword2);
+                if(passwordConfirm.getText().toString() != "" && passwordConfirm.getText().toString() != null && password.getText().toString() == passwordConfirm.getText().toString()){
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"password",passwordConfirm.getText().toString());
+                }
+
             }
         });
         Button cancelChanges= (Button)findViewById(R.id.CancelEdits);
