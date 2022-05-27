@@ -20,6 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 
 public class Settings extends AppCompatActivity {
 

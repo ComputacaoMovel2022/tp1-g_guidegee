@@ -33,6 +33,10 @@ public class User {
         this.imageURL = "";
     }
 
+    public User() {
+
+    }
+
     public String getUserKey() {
         return userKey;
     }

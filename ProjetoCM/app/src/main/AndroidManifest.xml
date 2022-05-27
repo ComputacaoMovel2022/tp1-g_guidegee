@@ -44,6 +44,12 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
+            android:name=".MessageListPage"
+            android:exported="false" />
+        <activity
+            android:name=".MessagePageActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartPageActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
@@ -53,6 +59,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".RatingGuide"
+            android:parentActivityName=".MainActivity"/>
+        </application>
 
 </manifest>
