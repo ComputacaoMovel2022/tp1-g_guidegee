@@ -50,6 +50,9 @@
             android:name=".MessagePageActivity"
             android:exported="false" />
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".StartPageActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">

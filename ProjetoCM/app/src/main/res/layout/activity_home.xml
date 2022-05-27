@@ -26,7 +26,7 @@
 
     <!--
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout2"
+        android:id="@+id/coordinatorLayout23"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar3"
+            android:id="@+id/bottomAppBar34"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="77dp"
@@ -45,7 +45,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView45"
             android:layout_width="47dp"
             android:layout_height="39dp"
             android:layout_gravity="left|center_vertical"
@@ -70,7 +70,7 @@
             app:srcCompat="@drawable/home_icon" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/profileIconBottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"

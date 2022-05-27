@@ -42,7 +42,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("rememberMe", "false");
+                editor.putString("rememberMe", "false").apply();
                 finishAffinity();
                 Intent intent = new Intent(getApplicationContext(), StartPageActivity.class);
                 startActivity(intent);
