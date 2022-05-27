@@ -7,10 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,27 +35,25 @@ public class MessageListPage extends AppCompatActivity {
         daoUser = new DAOUser();
         allUsers = new ArrayList<>();
 
-        Bundle extras = getIntent().getExtras();
-        String loggedUserKey = null;
-        if (extras != null) {
-            loggedUserKey = extras.getString("loggedUserKey");
-        }
-        String finalLoggedUserKey = loggedUserKey;
+        String finalLoggedUserKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
         daoUser.getDataSnapshotWhenChanged(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User loggedUser = snapshot.child(finalLoggedUserKey).getValue(User.class);
                 loggedUser.setUserKey(finalLoggedUserKey);
 
-                if (snapshot.child("AllAssociatedUsers").exists()) {
+
+                //if (snapshot.child("AllAssociatedUsers").exists()) {
+
                     for (DataSnapshot ds: snapshot.child(loggedUser.getUserKey()).child("AllAssociatedUsers").getChildren()) {
+                        System.out.println("INSIDE FOR");
                         String associatedUserKey = ds.getValue(String.class);
 
                         User foundUser = snapshot.child(associatedUserKey).getValue(User.class);
                         foundUser.setUserKey(associatedUserKey);
                         allUsers.add(foundUser);
                     }
-                }
+                //}
 
                 MessageListItemAdapter messageListItemAdapter = new MessageListItemAdapter(getApplicationContext(), R.layout.message_list_item, allUsers);
                 listView.setAdapter(messageListItemAdapter);

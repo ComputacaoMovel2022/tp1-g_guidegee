@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:divider="#FFF"
         android:dividerHeight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +49,7 @@
 
     </ListView>
 
+    <!--
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout2"
         android:layout_width="match_parent"
@@ -107,5 +108,16 @@
             app:srcCompat="@drawable/profile_icon" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    -->
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.projetocm.BottomBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

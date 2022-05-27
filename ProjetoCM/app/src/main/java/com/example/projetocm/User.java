@@ -32,6 +32,10 @@ public class User {
         this.numOfPplHelped = 0;
     }
 
+    public User() {
+
+    }
+
     public String getUserKey() {
         return userKey;
     }

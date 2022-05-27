@@ -6,22 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <include
-        android:id="@+id/top_base"
-        layout="@layout/top_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></include>
-    <include
-        android:id="@+id/bottom_base"
-        layout="@layout/bottom_bar"
-        android:layout_width="320dp"
-        android:layout_height="453dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar2"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="412dp"
+            android:layout_height="77dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.001" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="49dp"
+            android:layout_height="47dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar2"
+            app:layout_constraintEnd_toEndOf="@+id/bottomAppBar2"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar2"
+            app:srcCompat="@drawable/history_icon" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:onClick="clickOnMessagesImage"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar2"
+            app:layout_constraintEnd_toEndOf="@+id/bottomAppBar2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.538"
+            app:srcCompat="@drawable/message_icon" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="78dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar2"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.857"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/setting_icon" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar3"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="47dp"
+            android:layout_height="39dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginStart="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/homeButton"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:layout_constraintVertical_bias="0.578"
+            app:srcCompat="@drawable/search_guide_icon" />
+
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:srcCompat="@drawable/home_icon" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
+            app:layout_constraintEnd_toEndOf="@+id/bottomAppBar3"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
+            app:srcCompat="@drawable/profile_icon" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <TextView
         android:id="@+id/BestGuides"

@@ -4,33 +4,41 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.344" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/grey_bar_rectangle.xml" value="0.2905" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/grey_rectangle.xml" value="0.2905" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.344" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rectangule_green_btn.xml" value="0.2905" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_green.xml" value="0.2905" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_white.xml" value="0.2905" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_whitered.xml" value="0.2905" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout-land/list_requests_from_refugees.xml" value="0.30687830687830686" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/account_type.xml" value="0.2201795639162035" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_edit_profile.xml" value="0.2975630611372381" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_home.xml" value="0.29379485014774165" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_profile.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_settings.xml" value="0.2975630611372381" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/bottom_bar.xml" value="0.3625" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/bottom_bar.xml" value="0.2" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/empty.xml" value="0.3625" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guest_login.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_history.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_sign_up.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/list_requests_from_refugees.xml" value="0.536" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/loading_page.xml" value="0.2201795639162035" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/login_page.xml" value="0.24155622060709706" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/login_page.xml" value="0.536" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element.xml" value="0.72" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element_sender.xml" value="0.72" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element_receiver.xml" value="0.536" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element_sender.xml" value="0.4" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_list.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_list_item.xml" value="0.4" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_page.xml" value="0.4" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_page.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_user.xml" value="0.18788819875776397" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history_list_element.xml" value="0.536" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_sign_up.xml" value="0.2975630611372381" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees.xml" value="0.72" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees.xml" value="0.5727155727155727" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees_list_element.xml" value="0.72" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/start_page.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/successful_register.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/top_bar.xml" value="0.3625" />
         <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/arrow_2.xml" value="0.124" />
