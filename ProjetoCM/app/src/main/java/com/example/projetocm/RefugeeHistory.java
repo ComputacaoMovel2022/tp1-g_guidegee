@@ -49,7 +49,7 @@ public class RefugeeHistory extends AppCompatActivity {
                 User loggedUser = snapshot.child(finalLoggedUserKey).getValue(User.class);
                 loggedUser.setUserKey(finalLoggedUserKey);
 
-                if (snapshot.child("AllAssociatedUsers").exists()) {
+                if (snapshot.child(loggedUser.getUserKey()).child("AllAssociatedUsers").exists()) {
                     noHistoryImg.setVisibility(View.INVISIBLE);
                     for (DataSnapshot ds: snapshot.child(loggedUser.getUserKey()).child("AllAssociatedUsers").getChildren()) {
                         String associatedUserKey = ds.getValue(String.class);

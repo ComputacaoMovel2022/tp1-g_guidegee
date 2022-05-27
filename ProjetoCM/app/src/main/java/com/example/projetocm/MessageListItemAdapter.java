@@ -1,6 +1,8 @@
 package com.example.projetocm;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +30,7 @@ public class MessageListItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return allUsers.size();
     }
 
     @Override
@@ -43,6 +45,7 @@ public class MessageListItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        System.out.println("GETTING IN HERE");
         view = inflater.inflate(itemLayout, null);
 
         TextView textView = view.findViewById(R.id.messageProfileName);
@@ -59,7 +62,10 @@ public class MessageListItemAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(context, MessagePageActivity.class);
+                intent.putExtra("messageReceiver", allUsers.get(i).getUserKey());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                view.getContext().startActivity(intent);
             }
         });
 

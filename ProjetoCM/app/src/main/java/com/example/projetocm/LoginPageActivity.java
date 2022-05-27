@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,6 +33,22 @@ public class LoginPageActivity extends AppCompatActivity {
         {
             getSupportActionBar().hide();
         }
+
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+
+        CheckBox rememberMe = findViewById(R.id.rememberMeCheckbox);
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = preferences.edit();
+                if (compoundButton.isChecked()) {
+                    editor.putString("rememberMe", "true");
+                } else {
+                    editor.putString("rememberMe", "false");
+                }
+                editor.apply();
+            }
+        });
     }
 
     public void typeOfAccountClick(View view)
@@ -79,9 +98,7 @@ public class LoginPageActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(getApplicationContext(), "Login failed! Check credentials, please.", Toast.LENGTH_SHORT).show();
                         }
-                        mAuth.getCurrentUser().getUid()
                     }
                 });
-
     }
 }
