@@ -14,12 +14,11 @@
         android:background="@drawable/corner_white"
         android:clipToPadding="false"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/DeleteAccount"
+        app:layout_constraintBottom_toTopOf="@+id/logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.545">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Switch
             android:id="@+id/DarkMode"
@@ -137,7 +136,7 @@
         android:id="@+id/DeleteAccount"
         android:layout_width="170dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="48dp"
         android:backgroundTint="#FFFFFF"
         android:drawableTint="#FF0000"
         android:foregroundTint="#FF0000"
@@ -146,6 +145,27 @@
         app:cornerRadius="@android:dimen/thumbnail_width"
         app:iconTint="#FF0000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FF0000"
+        app:strokeColor="#FF0000"
+        app:strokeWidth="3.5dp"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FF0000"
+        android:foregroundTint="#FF0000"
+        android:text="@string/logout"
+        android:textColor="#DD2C00"
+        app:cornerRadius="@android:dimen/thumbnail_width"
+        app:iconTint="#FF0000"
+        app:layout_constraintBottom_toTopOf="@+id/DeleteAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

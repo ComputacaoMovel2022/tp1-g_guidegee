@@ -40,6 +40,7 @@
     <string name="choose_languages_you_know">Choose languages you know:</string>
     <string name="distance_choice">Distance Choice</string>
     <string name="distance_choice_unity">Distance choice unity</string>
+    <string name="logout">Logout</string>
     <string-array name="UnityChoice">
         <item>Km</item>
         <item>mi</item>
