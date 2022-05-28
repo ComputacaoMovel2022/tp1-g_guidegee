@@ -1,6 +1,8 @@
 package com.example.projetocm;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,22 +43,21 @@ public class TopBarFragment extends Fragment {
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                daoUser.getDatabaseReference().child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User user = snapshot.getValue(User.class);
-                        if (user.isUserGuide()) {
-                            view.getContext().startActivity(new Intent(view.getContext(), GuideHistory.class));
-                        } else {
-                            view.getContext().startActivity(new Intent(view.getContext(), RefugeeHistory.class));
-                        }
-                    }
+                SharedPreferences preferences = view.getContext().getSharedPreferences("userDefinitions", Context.MODE_PRIVATE);
+                String isGuideString = preferences.getString("isGuide", "");
+                if (isGuideString.equals("true")) {
+                    view.getContext().startActivity(new Intent(view.getContext(), GuideHistory.class));
+                } else {
+                    view.getContext().startActivity(new Intent(view.getContext(), RefugeeHistory.class));
+                }
+            }
+        });
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+        ImageView sendMsgButton = view.findViewById(R.id.messageSendButton);
+        sendMsgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.getContext().startActivity(new Intent(view.getContext(), MessageListPage.class));
             }
         });
         return view;

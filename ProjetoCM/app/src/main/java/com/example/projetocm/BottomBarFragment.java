@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class BottomBarFragment extends Fragment {
 
     public BottomBarFragment() {
@@ -30,6 +32,17 @@ public class BottomBarFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+        ImageView profileButton = view.findViewById(R.id.profileBottomButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Profile.class);
+                intent.putExtra("user", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                view.getContext().startActivity(intent);
+            }
+        });
+
         return view;
     }
 
