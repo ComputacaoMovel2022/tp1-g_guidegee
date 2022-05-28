@@ -53,6 +53,12 @@
             android:name=".EditProfile"
             android:exported="false" />
         <activity
+            android:name=".RefugeeHistory"
+            android:exported="false" />
+        <activity
+            android:name=".GuideHistory"
+            android:exported="false" />
+        <activity
             android:name=".StartPageActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
