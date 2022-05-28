@@ -33,7 +33,7 @@ public class Settings extends AppCompatActivity {
         DAOUser daoUser = new DAOUser();
 
         /**
-        * Delete Account
+        * Logout Account
         */
         Button logout= (Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
