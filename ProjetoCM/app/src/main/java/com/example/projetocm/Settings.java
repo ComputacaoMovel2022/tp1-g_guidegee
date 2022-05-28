@@ -3,11 +3,16 @@ package com.example.projetocm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.TargetApi;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -34,10 +39,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import java.security.Provider;
 import java.util.Locale;
 
-public class Settings extends AppCompatActivity {
+public class Settings extends AppCompatActivity implements SensorEventListener {
 
+    boolean sensorActive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -248,6 +255,8 @@ public class Settings extends AppCompatActivity {
         /**
          * Activate/Deactivate Darkmode
          */
+        SensorManager sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         Switch darkModeSwitch = (Switch)  findViewById(R.id.DarkMode);
         darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -255,7 +264,9 @@ public class Settings extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     //DarkMode activated
+                    sensorActive=true;
                 }else{
+                    sensorActive=false;
                     //DarkMode Deactivated
                 }
             }
@@ -303,5 +314,21 @@ public class Settings extends AppCompatActivity {
     public void goBackClick(View v) {
         startActivity(new Intent(Settings.this, HomeActivity.class));
         finish();
+    }
+
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT && sensorActive){
+            if(sensorEvent.values[0] <= 10000){
+                //activate dark mode
+            }else{
+                //activate default mode/dark mode
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
     }
 }
