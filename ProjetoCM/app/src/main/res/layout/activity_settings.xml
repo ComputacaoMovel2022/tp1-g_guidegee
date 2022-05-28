@@ -45,6 +45,7 @@
                 android:id="@+id/LanguageChoice"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:textcolor="black"
                 android:contentDescription="@string/languagecountry"
                 app:strokeColor="@color/black"
                 app:strokeWidth="48dp"
