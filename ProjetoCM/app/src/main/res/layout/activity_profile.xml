@@ -80,4 +80,13 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/editProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/UserImage"
+        app:layout_constraintEnd_toEndOf="@+id/UserImage"
+        app:layout_constraintTop_toTopOf="@+id/UserImage"
+        app:srcCompat="@drawable/edit_profile_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
