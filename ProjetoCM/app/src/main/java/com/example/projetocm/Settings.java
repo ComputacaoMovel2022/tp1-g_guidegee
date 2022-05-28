@@ -259,7 +259,7 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         Switch darkModeSwitch = (Switch)  findViewById(R.id.DarkMode);
         darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
+            //Dark mode change xml (colors) in onSensorChange
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
