@@ -135,6 +135,7 @@
                 android:layout_width="140dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
+                android:entries="@array/DistanceChoice"
                 android:contentDescription="@string/distance_choice" />
 
             <Spinner
@@ -142,6 +143,7 @@
                 android:layout_width="108dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
+                android:entries="@array/UnityChoice"
                 android:contentDescription="@string/distance_choice_unity"
                 tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>

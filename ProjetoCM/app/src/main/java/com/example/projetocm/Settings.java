@@ -112,10 +112,86 @@ public class Settings extends AppCompatActivity {
         /**
          * choose the Distance
          */
+        Spinner unityChoiceSpinner = (Spinner)  findViewById(R.id.UnityChoice);
         Spinner distanceChoiceSpinner = (Spinner)  findViewById(R.id.DistanceChoice);
         distanceChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Change the distance in DB
+                String unity = unityChoiceSpinner.getSelectedItem().toString();
+                switch (i){
+                    case 0:
+                        //1
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 1000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 1609);
+                        }
+                        break;
+                    case 1:
+                        //2
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 2000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 3218);
+                        }
+                        break;
+                    case 2:
+                        //5
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 5000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 8050);
+                        }
+                        break;
+                    case 3:
+                        //7
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 7000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 11270);
+                        }
+                        break;
+                    case 4:
+                        //10
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 10000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 16090);
+                        }
+                        break;
+                    case 5:
+                        //15
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 15000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 24140);
+                        }
+                        break;
+                    case 6:
+                        //20
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 20000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 32190);
+                        }
+                        break;
+                    case 7:
+                        //25
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 25000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 40230);
+                        }
+                        break;
+                    case 8:
+                        //30
+                        if(unity.equals("Km")) {
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 30000);
+                        }else{
+                            daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 48280);
+                        }
+                        break;
+                }
             }
             //bugs without this part
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -125,11 +201,18 @@ public class Settings extends AppCompatActivity {
 
         /**
          * choose the Unity
+         * Since we covert to km to the db i believe this is not necessary
          */
-        Spinner unityChoiceSpinner = (Spinner)  findViewById(R.id.UnityChoice);
         unityChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //Change the distance in DB, kilometer(KM) or miles(mi)
+                switch (i){
+                    case 0:
+                        //km
+                        break;
+                    case 1:
+                        //miles
+                        break;
+                }
             }
             //bugs without this part
             public void onNothingSelected(AdapterView<?> adapterView) {
