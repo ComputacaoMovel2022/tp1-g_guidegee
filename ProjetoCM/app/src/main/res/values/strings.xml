@@ -59,6 +59,10 @@
         <item>25</item>
         <item>30</item>
     </string-array>
+    <string-array name="LanguageChoice">
+        <item>English</item>
+        <item>Portuguese</item>
+    </string-array>
 
     <string name="your_histor">Your History</string>
     <string name="jo_o_morais">João Morais</string>
