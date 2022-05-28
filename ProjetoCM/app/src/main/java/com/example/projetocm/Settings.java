@@ -1,6 +1,7 @@
 package com.example.projetocm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.TargetApi;
 import android.app.Service;
@@ -16,8 +17,7 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.DisplayMetrics;
-import android.view.Display;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -25,21 +25,7 @@ import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 
-import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.rpc.context.AttributeContext;
-
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-
-import java.security.Provider;
 import java.util.Locale;
 
 public class Settings extends AppCompatActivity implements SensorEventListener {
@@ -322,8 +308,10 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
         if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT && sensorActive){
             if(sensorEvent.values[0] <= 10000){
                 //activate dark mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }else{
                 //activate default mode/dark mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
         }
     }
