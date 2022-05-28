@@ -141,17 +141,18 @@ public class Settings extends AppCompatActivity {
          * choose the Language
          */
         Spinner languageChoiceSpinner = (Spinner)  findViewById(R.id.LanguageChoice);
+        languageChoiceSpinner.setSelection(languageChoiceSpinner.getSelectedItemPosition(), false);
         languageChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Change the xml string file
                 switch (i){
                     case 0:
                         setLocale(getApplicationContext(), "en");
-                        recreate();
+                        //recreate();
                         break;
                     case 1:
                         setLocale(getApplicationContext(), "pt");
-                        recreate();
+                        //recreate();
                         break;
                 }
             }
@@ -214,5 +215,10 @@ public class Settings extends AppCompatActivity {
         }
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
         return context;
+    }
+
+    public void goBackClick(View v) {
+        startActivity(new Intent(Settings.this, HomeActivity.class));
+        finish();
     }
 }
