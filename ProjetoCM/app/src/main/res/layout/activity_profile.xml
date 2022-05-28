@@ -7,23 +7,25 @@
     android:background="#FFFFFF"
     tools:context=".Profile">
 
-    <include
-        android:id="@+id/top_base"
-        layout="@layout/top_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/topBarFragmentView"
+        android:name="com.example.projetocm.TopBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></include>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/top_bar" />
 
-    <include
-        android:id="@+id/bottom_base"
-        layout="@layout/bottom_bar"
-        android:layout_width="320dp"
-        android:layout_height="453dp"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/bottomBarFragmentView"
+        android:name="com.example.projetocm.BottomBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout="@layout/bottom_bar" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/UserImage"
