@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190819766014",
+    "project_id": "guidegee-476d1",
+    "storage_bucket": "guidegee-476d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190819766014:android:f36fc77422f58d6acc1faf",
+        "android_client_info": {
+          "package_name": "com.example.projetocm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190819766014-h5m5pq42lmfi7uhu1jsb2jg7hchabe24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRyzFcvlTPpVNEzTVmvOhQwIVvqAeREgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190819766014-h5m5pq42lmfi7uhu1jsb2jg7hchabe24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

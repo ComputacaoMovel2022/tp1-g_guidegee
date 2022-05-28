@@ -30,6 +30,11 @@ public class User {
         this.userGuide = true;
         this.ratingScore = 0;
         this.numOfPplHelped = 0;
+        this.imageURL = "";
+    }
+
+    public User() {
+
     }
 
     public String getUserKey() {

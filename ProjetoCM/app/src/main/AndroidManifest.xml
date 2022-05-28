@@ -10,7 +10,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoadingPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuestLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuideSignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SuccessfulRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RefugeeSignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.ProjetoCM.NoActionBar" />
+            <!--android:name=".EditProfile"
+            android:exported="false" />-->
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".MessageListPage"
+            android:exported="false" />
+        <activity
+            android:name=".MessagePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".StartPageActivity"
+            android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
