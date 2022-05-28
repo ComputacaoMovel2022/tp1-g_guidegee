@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color invalid_map_circle_border
+color invalid_map_circle_fill
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color valid_map_circle_border
+color valid_map_circle_fill
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable invalid_map_bottom_area
+drawable valid_map_bottom_area
+id button3
+id button4
+id linearLayout
+id mainLayout
+id map
+id optionsLayout
+id textView
+layout activity_maps
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string invalid_back_to_list
+string invalid_contact_guide
+string invalid_region_message
+string title_activity_maps
+style Theme.GoogleMapsTestB
