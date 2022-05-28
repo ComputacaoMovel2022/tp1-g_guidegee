@@ -6,73 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/topBarFragmentView"
-        android:name="com.example.projetocm.TopBarFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar3"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:layout_gravity="bottom"
-            app:backgroundTint="@color/grey"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="47dp"
-            android:layout_height="39dp"
-            android:layout_gravity="left|center_vertical"
-            android:layout_marginStart="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
-            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-            app:layout_constraintVertical_bias="0.578"
-            app:srcCompat="@drawable/search_guide_icon" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/bottomAppBar3"
-            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-            app:srcCompat="@drawable/home_icon" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginEnd="60dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar3"
-            app:layout_constraintEnd_toEndOf="@+id/bottomAppBar3"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/bottomAppBar3"
-            app:srcCompat="@drawable/profile_icon" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/bottomBarFragmentView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.projetocm.BottomBarFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 
     <!--
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -134,6 +67,26 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     -->
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/topBarFragmentView"
+        android:name="com.example.projetocm.TopBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/top_bar" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/bottomBarFragmentView"
+        android:name="com.example.projetocm.BottomBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/bottom_bar" />
 
     <TextView
         android:id="@+id/BestGuides"

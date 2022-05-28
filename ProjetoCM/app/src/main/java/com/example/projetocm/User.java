@@ -43,10 +43,6 @@ public class User {
         this.guideDistanceThreshold = 5000; // 5000 m <=> 5 km
     }
 
-    public User() {
-
-    }
-
     public String getUserKey() {
         return userKey;
     }

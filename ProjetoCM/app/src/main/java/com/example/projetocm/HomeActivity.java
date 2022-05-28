@@ -58,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
                         "Logged as "
                                 + (isGuide ? ("Guide") : ("Refugee"))
                                 + " at "
-                                + loc.toString(),
+                                + ((loc == null) ? "Unset location" : loc.toString()),
                         Toast.LENGTH_LONG
                 ).show();
 
