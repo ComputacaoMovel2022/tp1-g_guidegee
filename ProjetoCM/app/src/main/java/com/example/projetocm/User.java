@@ -10,6 +10,13 @@ public class User {
     private double ratingScore;
     private int numOfPplHelped;
     private String imageURL;
+    private int guideDistanceThreshold;
+
+    public static final int INVALID_DISTANCE = -1;
+
+    public User() {
+        // Empty constructor method, so Firebase can transfer the information over.
+    }
 
     public User(String username, String email, String password)
     {
@@ -18,6 +25,7 @@ public class User {
         this.password = password;
         this.userGuide = false;
         this.imageURL = "";
+        this.guideDistanceThreshold = INVALID_DISTANCE;
     }
 
     public User(String username, String email, String password,
@@ -31,6 +39,8 @@ public class User {
         this.ratingScore = 0;
         this.numOfPplHelped = 0;
         this.imageURL = "";
+
+        this.guideDistanceThreshold = 5000; // 5000 m <=> 5 km
     }
 
     public User() {
@@ -50,6 +60,7 @@ public class User {
     public String getImageURL() {
         return imageURL;
     }
+    public int getGuideDistanceThreshold() {return guideDistanceThreshold;}
 
     public void setUsername(String username) { this.username = username; }
     public void setEmail(String email) { this.email = email; }
@@ -63,4 +74,5 @@ public class User {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+    public void setGuideDistanceThreshold(int newDistance) {this.guideDistanceThreshold = newDistance;}
 }
