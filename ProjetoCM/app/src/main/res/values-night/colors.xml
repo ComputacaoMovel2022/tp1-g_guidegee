@@ -5,10 +5,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="font_color">#FF000000</color>
-    <color name="background">#FFFFFFFF</color>
-    <color name="bar_color">#E1E1E1</color>
-    <color name="second_bar_color">#F4F4F4</color>
+    <color name="font_color">#B8B8B8</color>
+    <color name="background">#212121</color>
+    <color name="bar_color">#4D4D4D</color>
+    <color name="second_bar_color">#393939</color>
     <color name="accept_green">#399442</color>
     <color name="decline_red">#FF0000</color>
 </resources>
