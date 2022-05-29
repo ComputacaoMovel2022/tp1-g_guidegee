@@ -110,6 +110,7 @@ public class EditProfile extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             // Handle unsuccessful uploads
+                            Toast.makeText(getApplicationContext(), "Unable to change photo", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -127,7 +128,12 @@ public class EditProfile extends AppCompatActivity {
                 if(passwordConfirm.getText().toString() != "" && passwordConfirm.getText().toString() != null && password.getText().toString() == passwordConfirm.getText().toString()){
                     daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"password",passwordConfirm.getText().toString());
                 }
-
+                TextView description = (TextView) findViewById(R.id.User_description);
+                if(description.getText().toString() != "" && description.getText().toString() != null){
+                    //send description to DB
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"description",personName.getText().toString());
+                }
+                Toast.makeText(getApplicationContext(), "Saves have been made", Toast.LENGTH_SHORT).show();
             }
         });
         Button cancelChanges= (Button)findViewById(R.id.CancelEdits);
