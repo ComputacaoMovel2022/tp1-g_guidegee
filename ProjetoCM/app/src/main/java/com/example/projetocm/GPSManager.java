@@ -64,7 +64,6 @@ public class GPSManager {
 */
     public Location implGetLocation(Activity act){
         mLocationManager = (LocationManager) act.getApplicationContext().getSystemService(LOCATION_SERVICE);
-        List<String> providers = mLocationManager.getProviders(true);
         Location bestLocation = null;
         System.out.println("BEFORE FOR");
             if (ActivityCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(act, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -117,6 +116,7 @@ public class GPSManager {
                     if (allPermissionsGranted) {
                         act.setContentView(R.layout.activity_home);
                         Location loc = implGetLocation(act);
+
                         Toast.makeText (
                                 act,
                                 "Logged at "
@@ -138,6 +138,7 @@ public class GPSManager {
             locPermsReq.launch(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION});
         } else {
             System.out.println("PERMISSION HAS ALREADY BEEN GIVEN");
+            act.setContentView(R.layout.activity_home);
         }
 
         return;

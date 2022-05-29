@@ -68,45 +68,6 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-
-
-        /*
-        userDB.getDataSnapshotOnce(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                DataSnapshot loggedUserEntry = snapshot.child(id);
-                isGuide = loggedUserEntry.child("userGuide").getValue(Boolean.class);
-
-                Location loc = (new GPSManager()).getLocation(_this);
-
-                userDB.setUserAttributeValue(id, "geolocation", loc);
-
-                Toast.makeText (
-                        _this,
-                        "Logged as "
-                                + (isGuide ? ("Guide") : ("Refugee"))
-                                + " at "
-                                + ((loc == null) ? "Unset location" : loc.toString()),
-                        Toast.LENGTH_LONG
-                ).show();
-
-            }
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        */
-    }
-
     public void clickProfile(View view) {
         startActivity(new Intent(HomeActivity.this, EditProfile.class));
         finish();
