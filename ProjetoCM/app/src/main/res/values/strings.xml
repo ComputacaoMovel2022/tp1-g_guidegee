@@ -78,4 +78,6 @@
     <string name="logText">LogText</string>
 
     <string name="rememberMe">Remember me?</string>
+
+    <string name="emptyValue">Empty Value</string>
 </resources>
