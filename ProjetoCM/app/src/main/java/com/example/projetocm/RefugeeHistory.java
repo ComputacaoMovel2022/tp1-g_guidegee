@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -36,12 +37,8 @@ public class RefugeeHistory extends AppCompatActivity {
         daoUser = new DAOUser();
         allHistoryRefugees = new ArrayList<>();
 
-        Bundle extras = getIntent().getExtras();
-        String loggedUserKey = null;
-        if (extras != null) {
-            loggedUserKey = extras.getString("loggedUserKey");
-        }
-        String finalLoggedUserKey = loggedUserKey;
+
+        String finalLoggedUserKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
         ImageView noHistoryImg = findViewById(R.id.empty_history_imageview);
         daoUser.getDataSnapshotWhenChanged(new ValueEventListener() {
             @Override
@@ -51,8 +48,10 @@ public class RefugeeHistory extends AppCompatActivity {
 
                 if (snapshot.child(loggedUser.getUserKey()).child("AllAssociatedUsers").exists()) {
                     noHistoryImg.setVisibility(View.INVISIBLE);
+                    System.out.println("GOT INSIDE IF");
                     for (DataSnapshot ds: snapshot.child(loggedUser.getUserKey()).child("AllAssociatedUsers").getChildren()) {
                         String associatedUserKey = ds.getValue(String.class);
+                        System.out.println("ASSOCIATED USER: " + associatedUserKey);
 
                         User foundUser = snapshot.child(associatedUserKey).getValue(User.class);
                         foundUser.setUserKey(associatedUserKey);
@@ -63,7 +62,7 @@ public class RefugeeHistory extends AppCompatActivity {
                 }
 
 
-                SimplifiedProfileItemAdapter simplifiedProfileItemAdapter = new SimplifiedProfileItemAdapter(getApplicationContext(), R.layout.refugee_history_list_element, allHistoryRefugees);
+                SimplifiedProfileItemAdapter simplifiedProfileItemAdapter = new SimplifiedProfileItemAdapter(getBaseContext(), R.layout.refugee_history_list_element, allHistoryRefugees);
                 listView.setAdapter(simplifiedProfileItemAdapter);
             }
 
@@ -72,5 +71,9 @@ public class RefugeeHistory extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void clickArrowButton(View v) {
+        finish();
     }
 }

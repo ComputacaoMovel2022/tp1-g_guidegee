@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:scaleX="1"
     tools:context=".MainActivity">
+    android:background="@color/background">
 
     <!-- Head Line -->
 

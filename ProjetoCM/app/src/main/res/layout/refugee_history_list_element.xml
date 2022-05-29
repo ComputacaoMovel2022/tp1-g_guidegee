@@ -11,7 +11,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    tools:layout_marginTop="0">
+    tools:layout_marginTop="0dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileIcon"
@@ -32,6 +32,7 @@
         android:layout_marginLeft="130dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        android:text="Empty User" />
+        android:text="Empty User"
+        android:textColor="@color/font_color"/>
 
 </FrameLayout>

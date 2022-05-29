@@ -37,7 +37,7 @@ public class SimplifiedProfileItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return allUsers.size();
     }
 
     @Override

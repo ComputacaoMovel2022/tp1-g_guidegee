@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/home_icon" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/profileBottomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
