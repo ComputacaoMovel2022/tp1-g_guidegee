@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
 import android.util.Log;
 import android.widget.ProgressBar;
 
@@ -52,7 +53,6 @@ public class LoadingPageActivity extends AppCompatActivity {
             }
         };
         mCountDownTimer.start();
-
         SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);
         DAOUser daoUser = new DAOUser();
         daoUser.getDataSnapshotOnce(new ValueEventListener() {

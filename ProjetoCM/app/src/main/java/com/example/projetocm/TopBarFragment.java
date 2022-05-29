@@ -1,6 +1,8 @@
 package com.example.projetocm;
 
 import android.content.Context;
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 public class TopBarFragment extends Fragment {
+    private DAOUser daoUser;
 
     DAOUser daoUser = new DAOUser();
 
@@ -35,7 +38,21 @@ public class TopBarFragment extends Fragment {
             public void onClick(View v)
             {
                 view.getContext().startActivity(new Intent(view.getContext(), Settings.class));
-                getActivity().finish();
+            }
+        });
+
+        daoUser = new DAOUser();
+        ImageView historyButton = view.findViewById(R.id.historyButton);
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = view.getContext().getSharedPreferences("userDefinitions", MODE_PRIVATE);
+                String isGuideString = preferences.getString("isGuide", "");
+                if (isGuideString.equals("true")) {
+                    view.getContext().startActivity(new Intent(view.getContext(),RefugeeHistory.class));
+                }else{
+                    view.getContext().startActivity(new Intent(view.getContext(),GuideHistory.class));
+                }
             }
         });
 

@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -68,7 +70,7 @@ public class GuideHistory extends AppCompatActivity {
         allHistoryGuides = new ArrayList<>();
 
         //get User logged key
-        String loggedUserKey = getIntent().getStringExtra("loggedUser");
+        String loggedUserKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
         /* When login is implemented
         *   FirebaseAuth.getInstance().getCurrentUser().getuid();
         */
@@ -112,6 +114,8 @@ public class GuideHistory extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Go to Home_page
+                startActivity(new Intent(GuideHistory.this,HomeActivity.class));
+                finish();
             }
         });
     }

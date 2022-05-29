@@ -82,9 +82,8 @@ public class RatingGuide extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                Intent guideHistory = new Intent(RatingGuide.this,MainActivity.class);
-                startActivity(guideHistory);*/
+                startActivity(new Intent(RatingGuide.this,GuideHistory.class));
+                finish();
             }
         });
 
