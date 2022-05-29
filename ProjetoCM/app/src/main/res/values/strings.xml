@@ -80,4 +80,6 @@
     <string name="rememberMe">Remember me?</string>
 
     <string name="emptyValue">Empty Value</string>
+    <string name="availableGuides">Available guides</string>
+    <string name="viewMap">View Map</string>
 </resources>

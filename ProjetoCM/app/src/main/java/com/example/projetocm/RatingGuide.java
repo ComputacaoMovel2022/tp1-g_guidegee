@@ -62,8 +62,7 @@ public class RatingGuide extends AppCompatActivity {
                             String guideKeyDB = data.child("userKey").getValue(String.class);
                             System.err.println("FoundUser:"+guideKeyDB);
                             if(guideKeyDB.equalsIgnoreCase(guideKey)){ //
-                                String previousRatingString = data.child("reviewedVal").getValue(String.class);
-                                previousRating = Double.valueOf(previousRatingString);
+                                previousRating = data.child("reviewedVal").getValue(Double.class);
                                 foundUser = true;
                                 System.err.println("First IF");
                                 System.err.println("FoundUser:"+foundUser);
@@ -85,7 +84,7 @@ public class RatingGuide extends AppCompatActivity {
                             System.err.println("Second IF");
                         }else{
                             /* Fazer uma nova Review */
-                            AllReviewedUsers allReviewedUsers = new AllReviewedUsers(guideKey,String.valueOf(ratingValue));
+                            AllReviewedUsers allReviewedUsers = new AllReviewedUsers(guideKey,ratingValue);
                             daoUser.addReviewToList(refugeeKey,allReviewedUsers);
                             numOfReview++;
                         }

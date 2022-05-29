@@ -11,6 +11,10 @@
         android:theme="@style/Theme.ProjetoCM">
 
         <activity
+            android:name=".SearchPageMap"
+            android:exported="false" />
+
+        <activity
             android:name=".LoadingPageActivity"
             android:exported="false" />
         <activity

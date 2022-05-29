@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -39,6 +40,15 @@ public class BottomBarFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), Profile.class);
                 intent.putExtra("user", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        ImageView searchButton = view.findViewById(R.id.searchButtonImageView);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SearchPageMap.class);
                 view.getContext().startActivity(intent);
             }
         });
