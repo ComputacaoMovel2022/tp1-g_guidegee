@@ -1,5 +1,7 @@
 package com.example.projetocm;
 
+import static java.lang.Integer.parseInt;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationManagerCompat;
@@ -39,7 +41,11 @@ public class Settings extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         DAOUser daoUser = new DAOUser();
-
+        SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);
+        String isDarkModeOn = preferences.getString("darkMode", "");
+        String whatUnity = preferences.getString("unity", "");
+        String whatDistance = preferences.getString("distance", "");
+        String whatLanguage = preferences.getString("language", "");
         /**
         * Logout Account
         */
@@ -94,6 +100,12 @@ public class Settings extends AppCompatActivity{
          */
         Spinner unityChoiceSpinner = (Spinner)  findViewById(R.id.UnityChoice);
         Spinner distanceChoiceSpinner = (Spinner)  findViewById(R.id.DistanceChoice);
+        if(whatDistance!=null){
+            distanceChoiceSpinner.setSelection(parseInt(whatDistance));
+        }
+        if(whatUnity!=null){
+            unityChoiceSpinner.setSelection(parseInt(whatUnity));
+        }
         distanceChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Change the distance in DB
@@ -101,6 +113,7 @@ public class Settings extends AppCompatActivity{
                 switch (i){
                     case 0:
                         //1
+                        preferences.edit().putString("distance", "0").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 1000);
                         }else{
@@ -110,6 +123,7 @@ public class Settings extends AppCompatActivity{
                     case 1:
                         //2
                         if(unity.equals("Km")) {
+                            preferences.edit().putString("distance", "1").apply();
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 2000);
                         }else{
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 3218);
@@ -117,6 +131,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 2:
                         //5
+                        preferences.edit().putString("distance", "2").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 5000);
                         }else{
@@ -125,6 +140,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 3:
                         //7
+                        preferences.edit().putString("distance", "3").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 7000);
                         }else{
@@ -133,6 +149,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 4:
                         //10
+                        preferences.edit().putString("distance", "4").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 10000);
                         }else{
@@ -141,6 +158,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 5:
                         //15
+                        preferences.edit().putString("distance", "5").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 15000);
                         }else{
@@ -149,6 +167,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 6:
                         //20
+                        preferences.edit().putString("distance", "6").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 20000);
                         }else{
@@ -157,6 +176,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 7:
                         //25
+                        preferences.edit().putString("distance", "7").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 25000);
                         }else{
@@ -165,6 +185,7 @@ public class Settings extends AppCompatActivity{
                         break;
                     case 8:
                         //30
+                        preferences.edit().putString("distance", "8").apply();
                         if(unity.equals("Km")) {
                             daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "guideDistanceThreshold", 30000);
                         }else{
@@ -188,9 +209,11 @@ public class Settings extends AppCompatActivity{
                 switch (i){
                     case 0:
                         //km
+                        preferences.edit().putString("unity", "0").apply();
                         break;
                     case 1:
                         //miles
+                        preferences.edit().putString("unity", "1").apply();
                         break;
                 }
             }
@@ -205,15 +228,20 @@ public class Settings extends AppCompatActivity{
          */
         Spinner languageChoiceSpinner = (Spinner)  findViewById(R.id.LanguageChoice);
         languageChoiceSpinner.setSelection(languageChoiceSpinner.getSelectedItemPosition(), false);
+        if(whatLanguage!=null){
+            languageChoiceSpinner.setSelection(parseInt(whatLanguage));
+        }
         languageChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Change the xml string file
                 switch (i){
                     case 0:
+                        preferences.edit().putString("language", "0").apply();
                         setLocale(getApplicationContext(), "en");
                         //recreate();
                         break;
                     case 1:
+                        preferences.edit().putString("language", "1").apply();
                         setLocale(getApplicationContext(), "pt");
                         //recreate();
                         break;
@@ -231,6 +259,11 @@ public class Settings extends AppCompatActivity{
         SensorManager sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         Switch darkModeSwitch = (Switch)  findViewById(R.id.DarkMode);
+        if(isDarkModeOn.equals("true")){
+            darkModeSwitch.setChecked(true);
+        }else{
+            darkModeSwitch.setChecked(false);
+        }
         if(sensor != null){
             sensorManager.registerListener(
                     lightSensorListener,
@@ -247,9 +280,11 @@ public class Settings extends AppCompatActivity{
                     if(isChecked){
                         //DarkMode activated
                         sensorActive=true;
+                        preferences.edit().putString("darkMode", "true").apply();
                     }else{
                         sensorActive=false;
                         //DarkMode Deactivated
+                        preferences.edit().putString("darkMode", "false").apply();
                     }
                 }
             }
