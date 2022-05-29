@@ -21,7 +21,11 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
-        Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
+        if(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl() != null && FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString() != ""){
+            Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
+        }else{
+            userImage.setImageResource(R.drawable.perfil_icon);
+        }
 
         ImageView editProfileButton = findViewById(R.id.editProfileButton);
         editProfileButton.setOnClickListener(new View.OnClickListener() {

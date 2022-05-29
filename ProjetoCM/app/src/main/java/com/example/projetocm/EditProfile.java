@@ -70,7 +70,11 @@ public class EditProfile extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         DAOUser daoUser= new DAOUser();
         CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
-        Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
+        if(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl() != null && FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString() != ""){
+            Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
+        }else{
+            userImage.setImageResource(R.drawable.perfil_icon);
+        }
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
