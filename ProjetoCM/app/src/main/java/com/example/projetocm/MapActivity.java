@@ -1,5 +1,6 @@
 package com.example.projetocm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
@@ -13,7 +14,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private double mLat, mLong;
 
@@ -21,12 +22,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        mLat = savedInstanceState.getDouble("myLatitude", 0.0);
-        mLong = savedInstanceState.getDouble("myLongitude", 0.0);
+        mLat = getIntent().getDoubleExtra("myLat", 0.0);
+        mLong = getIntent().getDoubleExtra("myLong", 0.0);
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         GoogleMap mMap = googleMap;
 
         // Add a marker in Sydney and move the camera

@@ -39,7 +39,10 @@ public class BottomBarFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
+                view.getContext().startActivity(new Intent(
+                        view.getContext(),
+                        HomeActivity.class
+                ));
                 getActivity().finish();
             }
         });
@@ -58,7 +61,11 @@ public class BottomBarFragment extends Fragment {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SearchPageMap.class);
+                SharedPreferences preferences = getActivity().getSharedPreferences("userDefinitions", MODE_PRIVATE);
+                boolean isGuide = preferences.getString("isGuide", "").equals("true");
+                Intent intent = new Intent(view.getContext(),
+                        (isGuide) ? RequestsFromRefugees.class : SearchPageMap.class
+                );
                 view.getContext().startActivity(intent);
             }
         });

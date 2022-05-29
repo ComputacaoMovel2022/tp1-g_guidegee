@@ -1,6 +1,10 @@
 package com.example.projetocm;
 
+import android.location.Location;
+
 public class User {
+    //public static User loggedUser;
+
     private String userKey;
     private String username;
     private String email;
@@ -11,6 +15,8 @@ public class User {
     private int numOfPplHelped;
     private String imageURL;
     private int guideDistanceThreshold;
+
+    private SimpleLocation geolocation;
 
     public static final int INVALID_DISTANCE = -1;
 
@@ -57,6 +63,7 @@ public class User {
         return imageURL;
     }
     public int getGuideDistanceThreshold() {return guideDistanceThreshold;}
+    public SimpleLocation getGeolocation() {return geolocation;}
 
     public void setUsername(String username) { this.username = username; }
     public void setEmail(String email) { this.email = email; }
@@ -71,4 +78,5 @@ public class User {
         this.imageURL = imageURL;
     }
     public void setGuideDistanceThreshold(int newDistance) {this.guideDistanceThreshold = newDistance;}
+    public void setGeolocation(SimpleLocation geolocation) { this.geolocation = geolocation; }
 }

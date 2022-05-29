@@ -33,7 +33,9 @@
         <activity
             android:name=".SearchPageMap"
             android:exported="false" />
-
+        <activity
+            android:name=".RequestsFromRefugees"
+            android:exported="false" />
         <activity
             android:name=".LoadingPageActivity"
             android:exported="false" />

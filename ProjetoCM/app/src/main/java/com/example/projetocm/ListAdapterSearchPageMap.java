@@ -65,11 +65,13 @@ public class ListAdapterSearchPageMap extends BaseAdapter {
         holder.viewMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                Intent itRatingGuide = new Intent(context,RatingGuide.class);
-                itRatingGuide.putExtra("guideKey",guidesList.get(currentIndex).getUserKey());
-                context.startActivity(itRatingGuide);
-                 */
+
+                Intent mapAct = new Intent(context,MapActivity.class);
+                mapAct.putExtra("guideKey", guidesList.get(currentIndex).getUserKey());
+                mapAct.putExtra("myLat", GPSManager.lastLocation.getLatitude());
+                mapAct.putExtra("myLong", GPSManager.lastLocation.getLongitude());
+                context.startActivity(mapAct);
+
             }
 
         });

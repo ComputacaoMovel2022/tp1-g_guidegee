@@ -70,11 +70,19 @@ public class HomeActivity extends AppCompatActivity {
         //Toast.makeText(this, String.valueOf(loc), Toast.LENGTH_LONG).show();
 
         simpleList = findViewById(R.id.topGuidesListView);
-        //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);
+        userDB.setUserAttributeValue(
+                FirebaseAuth.getInstance().getCurrentUser().getUid(),
+                "geolocation",
+                new SimpleLocation(
+                        GPSManager.lastLocation.getLatitude(),
+                        GPSManager.lastLocation.getLongitude()
+                )
+        );
         isGuide = isGuideString.equals("true");
         daoUser.getDataSnapshotOnce(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
 
                 double rankingValues[] = new double[3];
                 for(int i=0;i<3;i++) {
