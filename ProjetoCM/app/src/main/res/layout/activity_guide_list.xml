@@ -31,7 +31,7 @@
             android:layout_width="413dp"
             android:layout_height="77dp"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/grey"
+            app:backgroundTint="@color/bar_color"
             tools:layout_editor_absoluteX="-1dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -64,7 +64,7 @@
         android:scaleY="2"
         android:text="@string/guide_list"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/font_color"
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"

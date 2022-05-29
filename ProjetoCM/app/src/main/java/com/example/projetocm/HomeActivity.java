@@ -55,10 +55,23 @@ public class HomeActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_home);
         userDB = new DAOUser();
     //  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        setContentView(R.layout.activity_home);
+
+        topGuides = new ArrayList<>();
+
+        HomeActivity _this = this;
+
+        SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);
+        String isGuideString = preferences.getString("isGuide", "");
+
+        GPSManager gpsManager = new GPSManager();
+
+
+        GPSManager.lastLocation = gpsManager.getLocationWithPermission(this);
+        //Toast.makeText(this, String.valueOf(loc), Toast.LENGTH_LONG).show();
 
         simpleList = findViewById(R.id.topGuidesListView);
-        topGuides = new ArrayList<>();
+        //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);
+        isGuide = isGuideString.equals("true");
         daoUser.getDataSnapshotOnce(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,18 +124,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-        HomeActivity _this = this;
 
-        SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);
-        String isGuideString = preferences.getString("isGuide", "");
-
-        GPSManager gpsManager = new GPSManager();
-
-        GPSManager.lastLocation = gpsManager.getLocationWithPermission(this);
-        //Toast.makeText(this, String.valueOf(loc), Toast.LENGTH_LONG).show();
-
-        //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);
-        isGuide = isGuideString.equals("true");
         /*
         Toast.makeText (
                 _this,
@@ -148,5 +150,4 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });*/
-    }
 }
