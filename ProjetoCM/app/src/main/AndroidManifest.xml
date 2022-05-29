@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.projetocm"
-    xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:remove="android:maxSdkVersion"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:remove="android:maxSdkVersion"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.projetocm">
+
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:remove="android:maxSdkVersion" />
+
+
 
     <application
         android:allowBackup="true"
@@ -12,6 +19,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoCM">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuideListActivity"
+            android:exported="false" />
         <activity
             android:name=".LoadingPageActivity"
             android:exported="false" />
@@ -38,8 +56,10 @@
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ProjetoCM.NoActionBar" />
-            <!--android:name=".EditProfile"
-            android:exported="false" />-->
+        <!--
+android:name=".EditProfile"
+            android:exported="false" />
+        -->
         <activity
             android:name=".Profile"
             android:exported="false" />
@@ -63,16 +83,17 @@
             android:exported="false" />
         <activity
             android:name=".StartPageActivity"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RatingGuide"
-            android:parentActivityName=".MainActivity"/>
-        </application>
+        <activity
+            android:name=".RatingGuide"
+            android:parentActivityName=".MainActivity" />
+    </application>
 
 </manifest>

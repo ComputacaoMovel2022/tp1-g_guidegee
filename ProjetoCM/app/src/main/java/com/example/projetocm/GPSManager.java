@@ -21,6 +21,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -31,6 +32,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class GPSManager {
 
@@ -97,7 +99,10 @@ public class GPSManager {
     }
 
 
-    public void requestPermission(AppCompatActivity act) {
+    public Location getLocationWithPermission(AppCompatActivity act) {
+
+        AtomicReference<Location> locAtomic = new AtomicReference<>();
+
         AtomicInteger perms = new AtomicInteger(Perms.NO_LOCATION);
 
         ActivityResultContracts.RequestMultiplePermissions multiplePermissionsContract
@@ -115,14 +120,14 @@ public class GPSManager {
 
                     if (allPermissionsGranted) {
                         act.setContentView(R.layout.activity_home);
-                        Location loc = implGetLocation(act);
+                        locAtomic.set(implGetLocation(act));
 
-                        Toast.makeText (
+                        /*Toast.makeText (
                                 act,
                                 "Logged at "
-                                        + ((loc == null) ? "Unset location" : loc.toString()),
+                                        + ((locAtomic.get() == null) ? "Unset location" : locAtomic.get().toString()),
                                 Toast.LENGTH_LONG
-                        ).show();
+                        ).show();*/
                     }
 
                     /*Log.d("PERMISSIONS", "Launcher result: " + isGranted.toString());
@@ -139,9 +144,60 @@ public class GPSManager {
         } else {
             System.out.println("PERMISSION HAS ALREADY BEEN GIVEN");
             act.setContentView(R.layout.activity_home);
+            if (locAtomic.get() == null) locAtomic.set(implGetLocation(act));
         }
 
-        return;
+        return locAtomic.get();
     }
 
+    public Location getLocationWithPermission(FragmentActivity act) {
+
+        AtomicReference<Location> locAtomic = new AtomicReference<>();
+
+        AtomicInteger perms = new AtomicInteger(Perms.NO_LOCATION);
+
+        ActivityResultContracts.RequestMultiplePermissions multiplePermissionsContract
+                = new ActivityResultContracts.RequestMultiplePermissions();
+
+        ActivityResultLauncher<String[]> locPermsReq =
+                act.registerForActivityResult(multiplePermissionsContract, isGranted -> {
+
+                    boolean allPermissionsGranted = true;
+                    for (String s: isGranted.keySet()) {
+                        if (!isGranted.get(s)) {
+                            allPermissionsGranted = false;
+                        }
+                    }
+
+                    if (allPermissionsGranted) {
+                        act.setContentView(R.layout.activity_home);
+                        locAtomic.set(implGetLocation(act));
+
+                        /*Toast.makeText (
+                                act,
+                                "Logged at "
+                                        + ((locAtomic.get() == null) ? "Unset location" : locAtomic.get().toString()),
+                                Toast.LENGTH_LONG
+                        ).show();*/
+                    }
+
+                    /*Log.d("PERMISSIONS", "Launcher result: " + isGranted.toString());
+                    if (isGranted.containsValue(false)) {
+                        Log.d("PERMISSIONS", "At least one of the permissions was not granted, launching again...");
+                        //locPermsReq.launch(PERMISSIONS);
+                    }*/
+                });
+
+        if (ContextCompat.checkSelfPermission(act.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(act.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            System.out.println("CONCEDING PERMISSION....");
+            locPermsReq.launch(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION});
+        } else {
+            System.out.println("PERMISSION HAS ALREADY BEEN GIVEN");
+            act.setContentView(R.layout.activity_home);
+            if (locAtomic.get() == null) locAtomic.set(implGetLocation(act));
+        }
+
+        return locAtomic.get();
+    }
 }

@@ -11,4 +11,10 @@
     <color name="lighter_grey">#F4F4F4</color>
     <color name="accept_green">#399442</color>
     <color name="decline_red">#FF0000</color>
+
+    <color name="valid_map_circle_border">#FF00CC19</color>
+    <color name="valid_map_circle_fill">#77B0FFBA</color>
+    <color name="invalid_map_circle_border">#FFCC0000</color>
+    <color name="invalid_map_circle_fill">#77CC0000</color>
+
 </resources>

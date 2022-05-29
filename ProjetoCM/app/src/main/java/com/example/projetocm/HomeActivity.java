@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.SharedPreferencesCompat;
 import androidx.core.content.SharedPreferencesKt;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.preference.PreferenceManager;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -51,7 +53,8 @@ public class HomeActivity extends AppCompatActivity {
 
         GPSManager gpsManager = new GPSManager();
 
-        gpsManager.requestPermission(_this);
+        Location loc = gpsManager.getLocationWithPermission(this);
+        //Toast.makeText(this, String.valueOf(loc), Toast.LENGTH_LONG).show();
 
         //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);
         isGuide = isGuideString.equals("true");
@@ -66,14 +69,19 @@ public class HomeActivity extends AppCompatActivity {
         ).show();
         */
 
-    }
-
-    public void clickProfile(View view) {
-        startActivity(new Intent(HomeActivity.this, EditProfile.class));
-        finish();
-    }
-    public void clickOnMessagesImage(View view) {
-        Intent intent = new Intent(getApplicationContext(), MessageListPage.class);
-        startActivity(intent);
+        /*searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isGuide) {
+                    Toast.makeText (
+                            _this,
+                            "Will open a "
+                                    + (isGuide ? ("Guide") : ("Refugee"))
+                                    + "'s screen.",
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            }
+        });*/
     }
 }
