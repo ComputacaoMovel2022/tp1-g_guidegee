@@ -11,13 +11,6 @@
         android:theme="@style/Theme.ProjetoCM">
 
         <activity
-            android:name=".GuideHistory"
-            android:exported="false"/>
-        <activity
-            android:name=".RefugeeHistory"
-            android:exported="false"/>
-
-        <activity
             android:name=".LoadingPageActivity"
             android:exported="false" />
         <activity

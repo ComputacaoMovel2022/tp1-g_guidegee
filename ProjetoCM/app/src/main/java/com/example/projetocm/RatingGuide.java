@@ -11,14 +11,18 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class RatingGuide extends AppCompatActivity {
-    //RatingBar simpleRatingBar = (RatingBar) findViewById(R.id.simpleRatingBar);
-    //Button submitButton = (Button) findViewById(R.id.submitButton);
     String guideKey;
+    String refugeeKey;
+    double previousRating;
+    String allReviewedUserId;
 
     DAOUser daoUser;
 
@@ -31,6 +35,8 @@ public class RatingGuide extends AppCompatActivity {
             Intent it = getIntent();
             guideKey = it.getStringExtra("guideKey");
 
+            refugeeKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         daoUser= new DAOUser();
 
 
@@ -42,26 +48,57 @@ public class RatingGuide extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float ratingValue = simpleRatingBar.getRating();
-
+                double ratingValue = (double) simpleRatingBar.getRating();
+                previousRating = (double) 0;
 
                 daoUser.getDataSnapshotOnce(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        /* ERRO -> UM UTILIZADOR PODE FAZER MILHOES DE REVIEWS DIFERENTES */
-                        User loggedUser = snapshot.child(guideKey).getValue(User.class);
-                        loggedUser.setUserKey(guideKey);
+                        User guideUser = snapshot.child(guideKey).getValue(User.class);
+                        guideUser.setUserKey(guideKey);
+                        boolean foundUser = false;
+
+                        for (DataSnapshot data : snapshot.child(refugeeKey).child("AllReviewedUsers").getChildren()) {
+                            String guideKeyDB = data.child("userKey").getValue(String.class);
+                            System.err.println("FoundUser:"+guideKeyDB);
+                            if(guideKeyDB.equalsIgnoreCase(guideKey)){ //
+                                String previousRatingString = data.child("reviewedVal").getValue(String.class);
+                                previousRating = Double.valueOf(previousRatingString);
+                                foundUser = true;
+                                System.err.println("First IF");
+                                System.err.println("FoundUser:"+foundUser);
+                                allReviewedUserId = data.getKey();
+                            }
+                        }
 
 
-                        // NUMOFPpleHelped ESTÁ ERRADO a varialvel tem o nome errado
-                        int numOfReview = loggedUser.getNumOfPplHelped();
-                        double reviewVal = loggedUser.getRatingScore();
+                        /* Equação */
 
+                        int numOfReview = guideUser.getNumOfPplHelped();
+                        double reviewVal = guideUser.getRatingScore();
+                        double finalReview = 0.0;
 
-                        double finalReview = ((reviewVal/numOfReview)+ratingValue)/numOfReview+1;
+                        /* Atribuição de Valores */
+                        if(foundUser){
+                            /* Alterar uma Review já dada */
+                            daoUser.setUserReviewValue(refugeeKey,allReviewedUserId,ratingValue);
+                            System.err.println("Second IF");
+                        }else{
+                            /* Fazer uma nova Review */
+                            AllReviewedUsers allReviewedUsers = new AllReviewedUsers(guideKey,String.valueOf(ratingValue));
+                            daoUser.addReviewToList(refugeeKey,allReviewedUsers);
+                            numOfReview++;
+                        }
 
+                        if(numOfReview==0){
+                            finalReview=ratingValue;
+                        }else{
+                            finalReview=(((reviewVal-previousRating)/numOfReview)+ratingValue)/numOfReview;
+                        }
+
+                        System.err.println(finalReview);
                         daoUser.setUserAttributeValue(guideKey,"ratingScore",finalReview);
-                        daoUser.setUserAttributeValue(guideKey,"numOfPplHelped",numOfReview+1);
+                        daoUser.setUserAttributeValue(guideKey,"numOfPplHelped",numOfReview);
 
                     }
 
@@ -76,6 +113,9 @@ public class RatingGuide extends AppCompatActivity {
                 *         "Nome do Guia:"+guideName,
                 *         Toast.LENGTH_LONG).show();
                 */
+
+                startActivity(new Intent(RatingGuide.this,GuideHistory.class));
+                finish();
             }
         });
 
