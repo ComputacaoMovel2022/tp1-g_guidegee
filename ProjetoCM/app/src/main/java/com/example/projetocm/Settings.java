@@ -269,6 +269,7 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
         configuration.setLayoutDirection(locale);
         return context.createConfigurationContext(configuration);
     }
+    
     @SuppressWarnings("deprecation")
     private static Context updateResourcesLegacy(Context context, String language) {
         Locale locale = new Locale(language);
