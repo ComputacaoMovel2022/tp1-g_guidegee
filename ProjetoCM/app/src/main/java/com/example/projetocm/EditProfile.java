@@ -92,12 +92,13 @@ public class EditProfile extends AppCompatActivity {
         userImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requestPermission();
                 if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if(intent.resolveActivity(getPackageManager()) != null){
                         activityResultLauncher.launch(intent);
                     }
+                }else{
+                    requestPermission();
                 }
             }
         });
