@@ -83,7 +83,7 @@ public class EditProfile extends AppCompatActivity {
                 if(result.getResultCode() == RESULT_OK && result.getData() != null){
                     Bundle bundle = result.getData().getExtras();
                     file = result.getData().getData();
-                    ref = storageRef.child("images/"+file.getLastPathSegment());
+                    ref = storageRef.child("images/"+file);
                     Bitmap bitmap = (Bitmap) bundle.get("data");
                     userImage.setImageBitmap(bitmap);
                 }
