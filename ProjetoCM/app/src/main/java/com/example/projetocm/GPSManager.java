@@ -37,6 +37,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class GPSManager {
 
     private LocationManager mLocationManager;
+    public static Location lastLocation;
 
     /*public Location getLocation(Activity act) {
 
@@ -172,20 +173,7 @@ public class GPSManager {
                     if (allPermissionsGranted) {
                         act.setContentView(R.layout.activity_home);
                         locAtomic.set(implGetLocation(act));
-
-                        /*Toast.makeText (
-                                act,
-                                "Logged at "
-                                        + ((locAtomic.get() == null) ? "Unset location" : locAtomic.get().toString()),
-                                Toast.LENGTH_LONG
-                        ).show();*/
                     }
-
-                    /*Log.d("PERMISSIONS", "Launcher result: " + isGranted.toString());
-                    if (isGranted.containsValue(false)) {
-                        Log.d("PERMISSIONS", "At least one of the permissions was not granted, launching again...");
-                        //locPermsReq.launch(PERMISSIONS);
-                    }*/
                 });
 
         if (ContextCompat.checkSelfPermission(act.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED

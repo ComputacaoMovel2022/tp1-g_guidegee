@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
 
         GPSManager gpsManager = new GPSManager();
 
-        Location loc = gpsManager.getLocationWithPermission(this);
+        GPSManager.lastLocation = gpsManager.getLocationWithPermission(this);
         //Toast.makeText(this, String.valueOf(loc), Toast.LENGTH_LONG).show();
 
         //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);

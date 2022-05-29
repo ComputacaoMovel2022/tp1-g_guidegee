@@ -29,7 +29,7 @@ public class BottomBarFragment extends Fragment {
                 container, false);
 
         GPSManager gpsManager = new GPSManager();
-        Location loc = gpsManager.getLocationWithPermission(getActivity());
+        Location loc = GPSManager.lastLocation;
 
         ImageView homeButton = view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener()
