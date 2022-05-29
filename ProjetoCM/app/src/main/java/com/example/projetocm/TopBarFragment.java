@@ -1,15 +1,25 @@
 package com.example.projetocm;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 public class TopBarFragment extends Fragment {
+    private DAOUser daoUser;
 
     public TopBarFragment() {
         super(R.layout.top_bar);
@@ -26,7 +36,21 @@ public class TopBarFragment extends Fragment {
             public void onClick(View v)
             {
                 view.getContext().startActivity(new Intent(view.getContext(), Settings.class));
-                getActivity().finish();
+            }
+        });
+
+        daoUser = new DAOUser();
+        ImageView historyButton = view.findViewById(R.id.historyButton);
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = view.getContext().getSharedPreferences("userDefinitions", MODE_PRIVATE);
+                String isGuideString = preferences.getString("isGuide", "");
+                if (isGuideString.equals("true")) {
+                    view.getContext().startActivity(new Intent(view.getContext(),RefugeeHistory.class));
+                }else{
+                    view.getContext().startActivity(new Intent(view.getContext(),GuideHistory.class));
+                }
             }
         });
         return view;
