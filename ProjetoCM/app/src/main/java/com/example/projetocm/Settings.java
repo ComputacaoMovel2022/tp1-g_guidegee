@@ -26,13 +26,14 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import java.util.Locale;
 
-public class Settings extends AppCompatActivity implements SensorEventListener {
+public class Settings extends AppCompatActivity{
 
-    boolean sensorActive;
+    private boolean sensorActive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -230,16 +231,26 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
         SensorManager sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         Switch darkModeSwitch = (Switch)  findViewById(R.id.DarkMode);
+        if(sensor != null){
+            sensorManager.registerListener(
+                    lightSensorListener,
+                    sensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+
+        }
         darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             //Dark mode change xml (colors) in onSensorChange
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    //DarkMode activated
-                    sensorActive=true;
-                }else{
-                    sensorActive=false;
-                    //DarkMode Deactivated
+
+                if(sensor != null){
+                    if(isChecked){
+                        //DarkMode activated
+                        sensorActive=true;
+                    }else{
+                        sensorActive=false;
+                        //DarkMode Deactivated
+                    }
                 }
             }
 
@@ -269,7 +280,7 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
         configuration.setLayoutDirection(locale);
         return context.createConfigurationContext(configuration);
     }
-    
+
     @SuppressWarnings("deprecation")
     private static Context updateResourcesLegacy(Context context, String language) {
         Locale locale = new Locale(language);
@@ -290,20 +301,25 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
     }
 
 
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-        if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT && sensorActive){
-            if(sensorEvent.values[0] <= 10000){
-                //activate dark mode
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }else{
-                //activate default mode/dark mode
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+    private final SensorEventListener lightSensorListener
+            = new SensorEventListener(){
+
+        @Override
+        public void onSensorChanged(SensorEvent sensorEvent) {
+            if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT && sensorActive){
+                if(sensorEvent.values[0] <= 10000){
+                    //activate dark mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }else{
+                    //activate default mode/dark mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
             }
         }
-    }
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
-    }
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int i) {
+        }
+    };
 }

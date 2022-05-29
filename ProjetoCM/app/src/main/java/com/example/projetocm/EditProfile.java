@@ -163,10 +163,19 @@ public class EditProfile extends AppCompatActivity {
                             langList.add(i);
                             // Sort array list
                             Collections.sort(langList);
+
+
+                            // add in DataBase the lang option
+
+
                         } else {
                             // when checkbox unselected
                             // Remove position from langList
                             langList.remove(Integer.valueOf(i));
+
+
+                            // Remove lang from the langs know
+
                         }
                     }
                 });
