@@ -18,6 +18,7 @@ public class DAOUser {
     private DatabaseReference databaseReference;
     private final String ALL_ASSOCIATED_USERS_ATTRIBUTE = "AllAssociatedUsers";
     private final String ALL_REVIEWED_USERS_ATTRIBUTE = "AllReviewedUsers";
+    private final String ALL_REQUESTS_USERS_ATTRIBUTE = "AllRequestsUsers";
 
 
     public DAOUser() {
@@ -84,6 +85,20 @@ public class DAOUser {
      */
     public Task<Void> addUserToList(String mainUserKey, String associatedUserKey) {
         return databaseReference.child(mainUserKey).child(ALL_ASSOCIATED_USERS_ATTRIBUTE).push().setValue(associatedUserKey);
+    }
+
+    /**
+     * Adds an user to a user list which the main user is associated.
+     * Solves the situation of the guides being associated to refugees, and the refugees
+     * being associated to guides.
+     * You simply put the key of the other in a list of users.
+     *
+     * @param guideUserKey Main user whose list will get a new key.
+     * @param refugeeUserKey that will be added to the mainUser's user list.
+     * @return a task, which can be used for error checking.
+     */
+    public Task<Void> addUserRequestList(String guideUserKey, String refugeeUserKey) {
+        return databaseReference.child(guideUserKey).child(ALL_REQUESTS_USERS_ATTRIBUTE).push().setValue(refugeeUserKey);
     }
 
     /**

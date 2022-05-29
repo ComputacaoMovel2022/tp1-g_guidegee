@@ -10,6 +10,7 @@ public class User {
     private double ratingScore;
     private int numOfPplHelped;
     private String imageURL;
+    private boolean isAvailable;
 
     public User(String username, String email, String password)
     {
@@ -50,6 +51,7 @@ public class User {
     public String getImageURL() {
         return imageURL;
     }
+    public boolean getAvailable(){ return isAvailable;}
 
     public void setUsername(String username) { this.username = username; }
     public void setEmail(String email) { this.email = email; }
@@ -63,4 +65,6 @@ public class User {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+    public void setAvailable(boolean isAvailable){this.isAvailable=isAvailable;}
 }
+

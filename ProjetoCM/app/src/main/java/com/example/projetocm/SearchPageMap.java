@@ -38,7 +38,7 @@ public class SearchPageMap extends AppCompatActivity{
         daoUser = new DAOUser();
         allAvailableGuides = new ArrayList<>();
 
-        //String loggedUserKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String loggedUserKey = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
         ImageView noHistoryImg = (ImageView) findViewById(R.id.empty_history_imageview);
@@ -47,12 +47,24 @@ public class SearchPageMap extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot data:snapshot.getChildren()){
                     if(data.child("userGuide").getValue(Boolean.class)){
-                        User curUser = data.getValue(User.class);
-                        curUser.setUserKey(data.getKey());
-                        allAvailableGuides.add(curUser);
+                        if(data.child("isAvailable").exists()) {
+                            if (data.child("isAvailable").getValue(Boolean.class)) {
+                                boolean isAlreadyRequested = false;
+                                for (DataSnapshot dataRequests : data.child("AllRequestsUsers").getChildren()) {
+                                    if (dataRequests.getValue(String.class).equalsIgnoreCase(loggedUserKey)) {
+                                        isAlreadyRequested = true;
+                                    }
+                                }
+                                if (!isAlreadyRequested) {
+                                    User curUser = data.getValue(User.class);
+                                    curUser.setUserKey(data.getKey());
+                                    allAvailableGuides.add(curUser);
+                                }
+                            }
+                        }
                     }
                 }
-                ListAdapterSearchPageMap listAdapterSearchPageMap = new ListAdapterSearchPageMap(getApplicationContext(), R.layout.search_page_map_list_element, allAvailableGuides);
+                ListAdapterSearchPageMap listAdapterSearchPageMap = new ListAdapterSearchPageMap(getApplicationContext(), R.layout.search_page_map_list_element, allAvailableGuides, loggedUserKey);
                 listAdapterSearchPageMap.sendContext(searchPageMapContext);
                 simpleList.setAdapter(listAdapterSearchPageMap);
 
