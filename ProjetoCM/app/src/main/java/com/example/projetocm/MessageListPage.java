@@ -55,7 +55,7 @@ public class MessageListPage extends AppCompatActivity {
                     }
                 //}
 
-                MessageListItemAdapter messageListItemAdapter = new MessageListItemAdapter(getApplicationContext(), R.layout.message_list_item, allUsers);
+                MessageListItemAdapter messageListItemAdapter = new MessageListItemAdapter(getBaseContext(), R.layout.message_list_item, allUsers);
                 listView.setAdapter(messageListItemAdapter);
             }
 

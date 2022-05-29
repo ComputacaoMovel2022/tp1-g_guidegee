@@ -89,7 +89,7 @@ public class MessagePageActivity extends AppCompatActivity {
                 imageURLSender = snapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("imageURL").getValue(String.class);
                 imageURLReceiver = snapshot.child(finalMessageReceiverUserKey).child("imageURL").getValue(String.class);
 
-                listAdapter = new ListAdapterMessagePage(getApplicationContext(),
+                listAdapter = new ListAdapterMessagePage(getBaseContext(),
                         messages,
                         R.layout.message_bubble_element_sender,
                         R.layout.message_bubble_element_receiver,
