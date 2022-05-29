@@ -86,8 +86,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="351dp"
-        android:layout_height="225dp"
+        android:layout_width="350dp"
+        android:layout_height="179dp"
         android:background="@drawable/corner_white"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,15 +96,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
         app:layout_constraintVertical_bias="0.159">
-
-        <Switch
-            android:id="@+id/Notification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:minHeight="48dp"
-            android:text="@string/turn_off_notifications"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
             android:id="@+id/AvailabilityChoice"
@@ -117,8 +108,8 @@
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="351dp"
+            android:layout_height="104dp"
             android:orientation="horizontal">
 
             <TextView
@@ -135,16 +126,16 @@
                 android:layout_width="140dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
-                android:entries="@array/DistanceChoice"
-                android:contentDescription="@string/distance_choice" />
+                android:contentDescription="@string/distance_choice"
+                android:entries="@array/DistanceChoice" />
 
             <Spinner
                 android:id="@+id/UnityChoice"
                 android:layout_width="108dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="28dp"
-                android:entries="@array/UnityChoice"
                 android:contentDescription="@string/distance_choice_unity"
+                android:entries="@array/UnityChoice"
                 tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>
 

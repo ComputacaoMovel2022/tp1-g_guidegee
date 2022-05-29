@@ -70,23 +70,6 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
             }
         });
 
-        /**
-         * Activate/Deactivate Notification
-         */
-        Switch notificationSwitch = (Switch)  findViewById(R.id.Notification);
-        notificationSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    //Deactivate Notifications
-                }else{
-                    //Activate Notifications
-                    NotificationManagerCompat.from(getApplicationContext()).cancelAll();
-                }
-            }
-
-        });
 
         /**
          * Activate/Deactivate Availability
