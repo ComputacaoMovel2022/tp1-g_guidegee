@@ -81,9 +81,8 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onActivityResult(ActivityResult result) {
                 if(result.getResultCode() == RESULT_OK && result.getData() != null){
+                    file = result.getData().getData();
                     Bundle bundle = result.getData().getExtras();
-                    String uriString = result.getData().getStringExtra("uri");
-                    file = Uri.parse(uriString);
                     ref = storageRef.child("images/"+file);
                     Bitmap bitmap = (Bitmap) bundle.get("data");
                     userImage.setImageBitmap(bitmap);
