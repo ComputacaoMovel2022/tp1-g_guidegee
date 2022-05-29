@@ -46,6 +46,7 @@ public class Settings extends AppCompatActivity{
         String whatUnity = preferences.getString("unity", "");
         String whatDistance = preferences.getString("distance", "");
         String whatLanguage = preferences.getString("language", "");
+        String whatAvailability = preferences.getString("availability", "");
         /**
         * Logout Account
         */
@@ -82,14 +83,23 @@ public class Settings extends AppCompatActivity{
          * Activate/Deactivate Availability
          */
         Switch availabilitySwitch = (Switch)  findViewById(R.id.AvailabilityChoice);
+        if(whatAvailability.equals("true")){
+            availabilitySwitch.setChecked(true);
+        }else{
+            availabilitySwitch.setChecked(false);
+        }
         availabilitySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     //Activate availability
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "availability", true);
+                    preferences.edit().putString("availability", "true").apply();
                 }else{
                     //Deactivate availability
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "availability", false);
+                    preferences.edit().putString("availability", "false").apply();
                 }
             }
 
