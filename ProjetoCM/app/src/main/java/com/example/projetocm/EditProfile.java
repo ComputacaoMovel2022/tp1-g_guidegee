@@ -133,6 +133,11 @@ public class EditProfile extends AppCompatActivity {
                     //send description to DB
                     daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"description",personName.getText().toString());
                 }
+
+                if(textView.getText().toString() != "" && textView.getText().toString() != null){
+                    //send description to DB
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"languages",textView.getText().toString());
+                }
                 Toast.makeText(getApplicationContext(), "Saves have been made", Toast.LENGTH_SHORT).show();
             }
         });
