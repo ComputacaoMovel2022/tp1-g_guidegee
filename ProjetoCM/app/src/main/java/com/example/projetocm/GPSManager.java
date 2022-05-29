@@ -9,9 +9,11 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -23,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.type.LatLng;
 
 import java.util.Calendar;
 import java.util.List;
@@ -59,11 +62,11 @@ public class GPSManager {
     }
 
 */
-    private Location implGetLocation(Activity act){
+    public Location implGetLocation(Activity act){
         mLocationManager = (LocationManager) act.getApplicationContext().getSystemService(LOCATION_SERVICE);
         List<String> providers = mLocationManager.getProviders(true);
         Location bestLocation = null;
-        for (String provider : providers) {
+        System.out.println("BEFORE FOR");
             if (ActivityCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(act, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
@@ -73,24 +76,29 @@ public class GPSManager {
                 // to handle the case where the user grants the permission. See the documentation
                 // for ActivityCompat#requestPermissions for more details.
                 // return null;
-
+                System.out.println("REQUESTING PERMISSION");
                 ActivityCompat.requestPermissions(act, new String[]{
                         Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION}, 420);
+                        Manifest.permission.ACCESS_FINE_LOCATION}, 99);
             }
-            Location l = mLocationManager.getLastKnownLocation(provider);
-            if (l == null) {
-                continue;
+            Criteria criteria = new Criteria();
+            Location location = mLocationManager.getLastKnownLocation(mLocationManager.getBestProvider(criteria, false));
+            if (location != null) {
+                double lat = location.getLatitude();
+                double longi = location.getLongitude();
+                System.out.println("LOCATION LAT: " + lat + " LONG: " + longi);
+                return location;
             }
+            return null;
+                /*
             if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
                 // Found best last known location: %s", l);
                 bestLocation = l;
-            }
-        }
-        return bestLocation;
+            }*/
     }
 
-    public Location getLocation(AppCompatActivity act) {
+
+    public void requestPermission(AppCompatActivity act) {
         AtomicInteger perms = new AtomicInteger(Perms.NO_LOCATION);
 
         ActivityResultContracts.RequestMultiplePermissions multiplePermissionsContract
@@ -99,8 +107,22 @@ public class GPSManager {
         ActivityResultLauncher<String[]> locPermsReq =
                 act.registerForActivityResult(multiplePermissionsContract, isGranted -> {
 
+                    boolean allPermissionsGranted = true;
                     for (String s: isGranted.keySet()) {
-                        Log.d("AAAAAAAAA", s);
+                        if (!isGranted.get(s)) {
+                            allPermissionsGranted = false;
+                        }
+                    }
+
+                    if (allPermissionsGranted) {
+                        act.setContentView(R.layout.activity_home);
+                        Location loc = implGetLocation(act);
+                        Toast.makeText (
+                                act,
+                                "Logged at "
+                                        + ((loc == null) ? "Unset location" : loc.toString()),
+                                Toast.LENGTH_LONG
+                        ).show();
                     }
 
                     /*Log.d("PERMISSIONS", "Launcher result: " + isGranted.toString());
@@ -110,7 +132,15 @@ public class GPSManager {
                     }*/
                 });
 
-        return null;
+        if (ContextCompat.checkSelfPermission(act.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+          || ContextCompat.checkSelfPermission(act.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            System.out.println("CONCEDING PERMISSION....");
+            locPermsReq.launch(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION});
+        } else {
+            System.out.println("PERMISSION HAS ALREADY BEEN GIVEN");
+        }
+
+        return;
     }
 
 }

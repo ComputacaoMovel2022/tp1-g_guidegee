@@ -41,7 +41,30 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        //setContentView(R.layout.activity_home);
+        userDB = new DAOUser();
+
+        HomeActivity _this = this;
+
+        SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);
+        String isGuideString = preferences.getString("isGuide", "");
+
+        GPSManager gpsManager = new GPSManager();
+
+        gpsManager.requestPermission(_this);
+
+        //userDB.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(), "geolocation", loc);
+        isGuide = isGuideString.equals("true");
+        /*
+        Toast.makeText (
+                _this,
+                "Logged as "
+                        + (isGuide ? ("Guide") : ("Refugee"))
+                        + " at "
+                        + ((loc == null) ? "Unset location" : loc.toString()),
+                Toast.LENGTH_LONG
+        ).show();
+        */
 
     }
 
@@ -49,9 +72,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        userDB = new DAOUser();
 
-        HomeActivity _this = this;
+
+        /*
         userDB.getDataSnapshotOnce(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -81,9 +104,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        if (isGuide) {
-
-        }
+        */
     }
 
     public void clickProfile(View view) {
