@@ -22,7 +22,7 @@
             android:layout_width="413dp"
             android:layout_height="77dp"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/grey"
+            app:backgroundTint="@color/bar_color"
             tools:layout_editor_absoluteX="-1dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -76,7 +76,7 @@
                 android:layout_height="48dp"
                 android:entries="@array/LanguageChoice"
                 android:contentDescription="@string/languagecountry"
-                app:strokeColor="@color/black"
+                app:strokeColor="@color/font_color"
                 app:strokeWidth="48dp"
                 tools:ignore="TouchTargetSizeCheck" />
 
