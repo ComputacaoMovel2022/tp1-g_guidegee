@@ -1,5 +1,7 @@
 package com.example.projetocm;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.SharedPreferencesCompat;
@@ -7,6 +9,7 @@ import androidx.core.content.SharedPreferencesKt;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.SharedPreferences;
@@ -23,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -39,6 +43,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
         userDB = new DAOUser();
 
         HomeActivity _this = this;
@@ -49,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
                 DataSnapshot loggedUserEntry = snapshot.child(id);
                 isGuide = loggedUserEntry.child("userGuide").getValue(Boolean.class);
 
-                Location loc = GPSManager.getInstance().getLocation(_this);
+                Location loc = (new GPSManager()).getLocation(_this);
 
                 userDB.setUserAttributeValue(id, "geolocation", loc);
 

@@ -12,8 +12,10 @@ import java.util.Arrays;
 
 public class Perms {
 
-    public static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
-    public static final String FINE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
+    public static final int NO_LOCATION = 0;
+    public static final int COARSE_LOCATION = 1;
+    public static final int FINE_LOCATION = 2;
+    public static final int ALL_LOCATION = 3;
 
     public static boolean has(Activity act, String perm) {
         return ActivityCompat.checkSelfPermission(act, perm) == PackageManager.PERMISSION_GRANTED;

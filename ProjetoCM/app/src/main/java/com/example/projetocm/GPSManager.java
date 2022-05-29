@@ -13,8 +13,10 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
 
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -24,21 +26,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class GPSManager {
 
-    private static GPSManager instance;
-
     private LocationManager mLocationManager;
-
-    private GPSManager() {
-
-    }
-
-    public static GPSManager getInstance() {
-        if (instance == null) instance = new GPSManager();
-        return instance;
-    }
 
     /*public Location getLocation(Activity act) {
 
@@ -97,22 +90,27 @@ public class GPSManager {
         return bestLocation;
     }
 
-    public Location getLocation(Activity act) {
-        if (!Perms.has(act, Perms.COARSE_LOCATION, Perms.FINE_LOCATION)){
-            ActivityCompat.requestPermissions(act,
-                    new String[] {
-                            Manifest.permission.ACCESS_COARSE_LOCATION,
-                            Manifest.permission.ACCESS_FINE_LOCATION
-                    },
-                    420);
-        }
+    public Location getLocation(AppCompatActivity act) {
+        AtomicInteger perms = new AtomicInteger(Perms.NO_LOCATION);
 
-        mLocationManager =
-                (LocationManager) act
-                .getApplicationContext()
-                .getSystemService(LOCATION_SERVICE);
+        ActivityResultContracts.RequestMultiplePermissions multiplePermissionsContract
+                = new ActivityResultContracts.RequestMultiplePermissions();
 
-        return mLocationManager.getLastKnownLocation("gps");
+        ActivityResultLauncher<String[]> locPermsReq =
+                act.registerForActivityResult(multiplePermissionsContract, isGranted -> {
+
+                    for (String s: isGranted.keySet()) {
+                        Log.d("AAAAAAAAA", s);
+                    }
+
+                    /*Log.d("PERMISSIONS", "Launcher result: " + isGranted.toString());
+                    if (isGranted.containsValue(false)) {
+                        Log.d("PERMISSIONS", "At least one of the permissions was not granted, launching again...");
+                        //locPermsReq.launch(PERMISSIONS);
+                    }*/
+                });
+
+        return null;
     }
 
 }
