@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-  <!--  tools:context=".GuideHistory"> -->
+    android:layout_height="match_parent"
+    tools:context=".SearchPageMap">
 
-    <!-- Head Line -->
-
-    <!-- Arrow 2 -->
-
-    <!-- Rectangle Your History -->
-
-    <!-- Your History -->
-
-    <!-- Foot Line -->
-
-
-    <ImageView
-        android:id="@+id/empty_history_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHistory"
-        app:srcCompat="@drawable/empty_history_sign"
-        tools:ignore="ContentDescription" />
 
     <ListView
         android:id="@+id/guidesListView"
@@ -88,13 +67,13 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/your_histor"
+            android:id="@+id/available_guidesText"
             android:layout_width="247dp"
             android:layout_height="31dp"
             android:layout_alignParentTop="true"
 
             android:gravity="center_horizontal|top"
-            android:text="@string/your_histor"
+            android:text="@string/availableGuides"
             android:textAppearance="@style/your_histor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_6"
@@ -114,5 +93,4 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout="@layout/bottom_bar" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

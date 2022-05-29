@@ -17,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 public class DAOUser {
     private DatabaseReference databaseReference;
     private final String ALL_ASSOCIATED_USERS_ATTRIBUTE = "AllAssociatedUsers";
+    private final String ALL_REVIEWED_USERS_ATTRIBUTE = "AllReviewedUsers";
+
 
     public DAOUser() {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://guidegee-476d1-default-rtdb.europe-west1.firebasedatabase.app");
@@ -82,6 +84,32 @@ public class DAOUser {
      */
     public Task<Void> addUserToList(String mainUserKey, String associatedUserKey) {
         return databaseReference.child(mainUserKey).child(ALL_ASSOCIATED_USERS_ATTRIBUTE).push().setValue(associatedUserKey);
+    }
+
+    /**
+     * Adds an user to a reviewed users list which the main user is associated.
+     * Solves the situation of the refugees making multiple review's instead of editing their review
+     * You simply put the key of the other in a list of reviewed users.
+     *
+     * @param mainUserKey Main user whose list will get a new key.
+     * @param allReviewedUsers that will be added to the reviewed User's user list.
+     * @return a task, which can be used for error checking.
+     */
+    public Task<Void> addReviewToList(String mainUserKey, AllReviewedUsers allReviewedUsers) {
+        return databaseReference.child(mainUserKey).child(ALL_REVIEWED_USERS_ATTRIBUTE).push().setValue(allReviewedUsers);
+    }
+
+    /**
+     * Adds the referred attribute to the user if it doesn't exists (if it exists, it simply gets
+     * the attribute) and immediately sets a value.
+     *
+     * @param userKey The user's key, a String which identifies the user in the database.
+     * @param value The value you want to insert in the attribute.
+     * @param <T> Generic type.
+     * @return a task, which can be used for error checking.
+     */
+    public <T> Task<Void> setUserReviewValue(String userKey,String allReviewedUsersID, T value) {
+        return databaseReference.child(userKey).child("AllReviewedUsers").child(allReviewedUsersID).child("reviewedVal").setValue(value);
     }
 
     /**

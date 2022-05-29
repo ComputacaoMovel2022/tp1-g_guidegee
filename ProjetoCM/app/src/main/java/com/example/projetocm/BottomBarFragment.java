@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class BottomBarFragment extends Fragment {
 
     public BottomBarFragment() {
@@ -42,30 +44,25 @@ public class BottomBarFragment extends Fragment {
             }
         });
 
-        SharedPreferences preferences = view.getContext().getSharedPreferences(
-                "userDefinitions", MODE_PRIVATE
-        );
-        boolean isGuide = preferences.getString("isGuide", "").equals("true");
-
-        ImageView searchButton = view.findViewById(R.id.searchBtn);
-        searchButton.setOnClickListener(new View.OnClickListener()
-        {
+        ImageView profileButton = view.findViewById(R.id.profileBottomButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-
-                Toast.makeText(
-                        view.getContext(),
-                        String.format("Logged as %s...", (isGuide) ? "Guide" : "Refugee"),
-                        Toast.LENGTH_LONG
-                ).show();
-
-                Intent intent = new Intent(view.getContext(), MapActivity.class);
-                intent.getExtras().putDouble("myLatitude", loc.getLatitude());
-                intent.getExtras().putDouble("myLongitude", loc.getLongitude());
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Profile.class);
+                intent.putExtra("user", FirebaseAuth.getInstance().getCurrentUser().getUid());
                 view.getContext().startActivity(intent);
             }
         });
+
+        ImageView searchButton = view.findViewById(R.id.searchButtonImageView);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SearchPageMap.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
         return view;
     }
 

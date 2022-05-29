@@ -7,7 +7,7 @@
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.344" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout-land/list_requests_from_refugees.xml" value="0.30687830687830686" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_edit_profile.xml" value="0.2975630611372381" />
-        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_home.xml" value="0.29379485014774165" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_profile.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_settings.xml" value="0.2975630611372381" />
@@ -24,13 +24,41 @@
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history_list_element.xml" value="0.536" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_sign_up.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees.xml" value="0.72" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_page.xml" value="0.264" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_user.xml" value="0.18788819875776397" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history.xml" value="0.2975630611372381" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history_list_element.xml" value="0.536" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_sign_up.xml" value="0.2975630611372381" />
+        <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees.xml" value="0.5727155727155727" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees_list_element.xml" value="0.72" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/successful_register.xml" value="0.2975630611372381" />
         <entry key="..\:/Trabalhos/2º ano - Univ/2º Semestre/Computação Móvel/Projeto/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/top_bar.xml" value="0.3625" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/app_icon_background.xml" value="0.1" />
         <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/arrow_2.xml" value="0.124" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/background_splash.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/custom_button_viewmap.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/custom_input_messagebox.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/head_line.xml" value="0.105" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/message_send_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rectangle_6.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rectangle_text_box.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/roundcorners.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_green.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_white.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/rounded_corner_whitered.xml" value="0.1" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/account_type.xml" value="0.14266304347826086" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_edit_profile.xml" value="0.14266304347826086" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/bottom_bar.xml" value="0.12" />
-        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_history.xml" value="0.152" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_profile.xml" value="0.14266304347826086" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_settings.xml" value="0.14266304347826086" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/best_guide_list_element.xml" value="0.4" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/bottom_bar.xml" value="0.2" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guest_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_history.xml" value="0.2" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_history_list_element.xml" value="0.2" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/guide_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/list_requests_from_refugees.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/top_bar.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/lisbo/OneDrive/Ambiente de Trabalho/MyThings/IPS/Ano2/CM/Projeto1/tp1-g_guidegee/ProjetoCM/app/src/main/res/drawable/invalid_map_bottom_area.xml" value="0.2595" />
@@ -40,6 +68,28 @@
         <entry key="..\:/Users/lisbo/OneDrive/Ambiente de Trabalho/MyThings/IPS/Ano2/CM/Projeto1/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/activity_map.xml" value="0.13253527148353997" />
         <entry key="..\:/Users/lisbo/OneDrive/Ambiente de Trabalho/MyThings/IPS/Ano2/CM/Projeto1/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/bottom_bar.xml" value="0.1" />
         <entry key="..\:/Users/lisbo/OneDrive/Ambiente de Trabalho/MyThings/IPS/Ano2/CM/Projeto1/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/loading_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/login_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element_receiver.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_bubble_element_sender.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/message_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/rating.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/rating_guide.xml" value="0.176" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_history_list_element.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/refugee_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/requests_from_refugees_list_element.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/search_page_map.xml" value="0.176" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/search_page_map_list_element.xml" value="0.2" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/start_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/successful_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Luis/Documents/GitHub/tp1-g_guidegee/ProjetoCM/app/src/main/res/layout/top_bar.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/background_splash.xml" value="0.348" />
+        <entry key="app/src/main/res/drawable/rectangle_7.xml" value="0.3495" />
+        <entry key="app/src/main/res/drawable/rectangle_text_box.xml" value="0.3495" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3536458333333333" />
       </map>
     </option>

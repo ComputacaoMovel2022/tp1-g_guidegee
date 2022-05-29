@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -17,15 +15,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Reutilizable base adapter.
- * Used for lists of profiles. It can only change the profile picture and the profile name.
- * Everything else in the passed layout remains unchanged.
- * Pages it can be used for: Guide History, Refugee History, Message List
- */
-
-public class ListAdapterGuideHistory extends BaseAdapter{
-
+public class ListAdapterSearchPageMap extends BaseAdapter {
     private Context context;
     private List<User> guidesList;
     private LayoutInflater inflater;
@@ -34,11 +24,8 @@ public class ListAdapterGuideHistory extends BaseAdapter{
     private int currentIndex;
 
 
-    public ListAdapterGuideHistory(Context applicationContext, int itemLayout, List<User> guidesList) {
+    public ListAdapterSearchPageMap(Context applicationContext, int itemLayout, List<User> guidesList) {
         this.context = applicationContext;
-        //this.profileItemNames = profileNames;
-        //this.profileItemPictures = profilePictures;
-
         this.guidesList=guidesList;
         inflater = LayoutInflater.from(applicationContext);
         this.itemLayout = itemLayout;
@@ -59,13 +46,13 @@ public class ListAdapterGuideHistory extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder holder;
-        holder = new ViewHolder();
+        ViewHolderSearchPageMap holder;
+        holder = new ViewHolderSearchPageMap();
         view = inflater.inflate(itemLayout, null);
 
-        holder.profileName = view.findViewById(R.id.profileName);
-        holder.profileIcon = view.findViewById(R.id.profileIcon);
-        holder.reviewButton = (Button) view.findViewById (R.id.buttonReview);
+        holder.profileName = view.findViewById(R.id.profileNameSearchPageMap);
+        holder.profileIcon = view.findViewById(R.id.profileIconSearchPageMap);
+        holder.viewMapButton = (Button) view.findViewById (R.id.buttonViewMapSearchPageMap);
 
 
         holder.profileName.setText(guidesList.get(i).getUsername());
@@ -75,12 +62,14 @@ public class ListAdapterGuideHistory extends BaseAdapter{
             Picasso.get().load(guidesList.get(i).getImageURL()).into(holder.profileIcon);
         }
         currentIndex = i;
-        holder.reviewButton.setOnClickListener(new View.OnClickListener() {
+        holder.viewMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 Intent itRatingGuide = new Intent(context,RatingGuide.class);
                 itRatingGuide.putExtra("guideKey",guidesList.get(currentIndex).getUserKey());
-                 context.startActivity(itRatingGuide);
+                context.startActivity(itRatingGuide);
+                 */
             }
 
         });
@@ -93,10 +82,9 @@ public class ListAdapterGuideHistory extends BaseAdapter{
         this.context = context;
     }
 
-    class ViewHolder {
+    class ViewHolderSearchPageMap {
         TextView profileName;
         CircleImageView profileIcon;
-        Button reviewButton;
+        Button viewMapButton;
     }
-
 }
