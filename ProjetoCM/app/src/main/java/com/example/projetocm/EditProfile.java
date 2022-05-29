@@ -50,6 +50,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class EditProfile extends AppCompatActivity {
     public static final int Camera_Action_CODE=1;
@@ -68,9 +69,10 @@ public class EditProfile extends AppCompatActivity {
         //else if
         setContentView(R.layout.activity_edit_profile);
         DAOUser daoUser= new DAOUser();
+        CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
+        Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-        CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {

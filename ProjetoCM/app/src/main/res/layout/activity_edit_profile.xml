@@ -20,17 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/typeUser"
-        android:layout_width="84dp"
-        android:layout_height="33dp"
-        android:text="@string/typeuser"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserImage" />
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="339dp"
