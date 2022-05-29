@@ -110,10 +110,10 @@ public class Settings extends AppCompatActivity{
          */
         Spinner unityChoiceSpinner = (Spinner)  findViewById(R.id.UnityChoice);
         Spinner distanceChoiceSpinner = (Spinner)  findViewById(R.id.DistanceChoice);
-        if(whatDistance!=null){
+        if(whatDistance!=null && whatDistance!=""){
             distanceChoiceSpinner.setSelection(parseInt(whatDistance));
         }
-        if(whatUnity!=null){
+        if(whatUnity!=null && whatUnity!=""){
             unityChoiceSpinner.setSelection(parseInt(whatUnity));
         }
         distanceChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -238,7 +238,7 @@ public class Settings extends AppCompatActivity{
          */
         Spinner languageChoiceSpinner = (Spinner)  findViewById(R.id.LanguageChoice);
         languageChoiceSpinner.setSelection(languageChoiceSpinner.getSelectedItemPosition(), false);
-        if(whatLanguage!=null){
+        if(whatLanguage!=null && whatLanguage!=""){
             languageChoiceSpinner.setSelection(parseInt(whatLanguage));
         }
         languageChoiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
