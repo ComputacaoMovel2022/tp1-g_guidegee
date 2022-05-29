@@ -2,8 +2,10 @@ package com.example.projetocm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.annotation.TargetApi;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -80,6 +82,7 @@ public class Settings extends AppCompatActivity implements SensorEventListener {
                     //Deactivate Notifications
                 }else{
                     //Activate Notifications
+                    NotificationManagerCompat.from(getApplicationContext()).cancelAll();
                 }
             }
 
