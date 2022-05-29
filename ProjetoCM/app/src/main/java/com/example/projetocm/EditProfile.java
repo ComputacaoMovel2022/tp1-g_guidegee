@@ -95,7 +95,6 @@ public class EditProfile extends AppCompatActivity {
                 requestPermission();
                 if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    intent.putExtra("return-data", false);
                     if(intent.resolveActivity(getPackageManager()) != null){
                         activityResultLauncher.launch(intent);
                     }
@@ -140,7 +139,7 @@ public class EditProfile extends AppCompatActivity {
 
                 if(textView.getText().toString() != "" && textView.getText().toString() != null){
                     //send description to DB
-                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"languages",textView.getText().toString());
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"languagesspoken",textView.getText().toString());
                 }
                 Toast.makeText(getApplicationContext(), "Saves have been made", Toast.LENGTH_SHORT).show();
             }
