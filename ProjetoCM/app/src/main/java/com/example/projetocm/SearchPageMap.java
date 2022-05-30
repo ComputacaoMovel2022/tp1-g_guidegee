@@ -47,14 +47,15 @@ public class SearchPageMap extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot data:snapshot.getChildren()){
                     if(data.child("userGuide").getValue(Boolean.class)){
-                        if(data.child("isAvailable").exists()) {
-                            if (data.child("isAvailable").getValue(Boolean.class)){
+                        if(data.child("available").exists()) {
+                            if (data.child("available").getValue(Boolean.class)){
                                 boolean isAlreadyRequested = false;
                                 for (DataSnapshot dataRequests : data.child("AllRequestsUsers").getChildren()) {
                                     if (dataRequests.getValue(String.class).equalsIgnoreCase(loggedUserKey)) {
                                         isAlreadyRequested = true;
                                     }
                                 }
+
                                 boolean isAlreadyAssociated = false;
                                 for (DataSnapshot dataRequests : data.child("AllAssociatedUsers").getChildren()) {
                                     if (dataRequests.getValue(String.class).equalsIgnoreCase(loggedUserKey)) {
