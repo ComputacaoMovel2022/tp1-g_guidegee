@@ -18,7 +18,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private double mLat, mLong;
+    private double mLat, mLong, gLat, gLong;
+    private int gRadius;
+
     private ActivityMapBinding binding;
     private GoogleMap mMap;
 
@@ -28,6 +30,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         mLat = getIntent().getDoubleExtra("myLat", 0.0);
         mLong = getIntent().getDoubleExtra("myLong", 0.0);
+        gLat = getIntent().getDoubleExtra("gLat", 0.0);
+        gLong = getIntent().getDoubleExtra("gLong", 0.0);
+        gRadius = getIntent().getIntExtra("gRadius", 0);
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -43,17 +48,17 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng pos = new LatLng(mLat, mLong);
-        mMap.addMarker(new MarkerOptions().position(pos).title("You are here"));
+        LatLng mPos = new LatLng(mLat, mLong), gPos = new LatLng(gLat, gLong);
+        mMap.addMarker(new MarkerOptions().position(mPos).title("You are here"));
         mMap.addCircle(
                 new CircleOptions()
-                        .center(pos)
-                        .radius(10000)
+                        .center(gPos)
+                        .radius(gRadius)
                         .fillColor(getColor(R.color.invalid_map_circle_fill))
                         .strokeColor(getColor(R.color.invalid_map_circle_border))
         );
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 10.0f));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mPos, 10.0f));
 
         Toast.makeText(this, "a", Toast.LENGTH_LONG).show();
     }

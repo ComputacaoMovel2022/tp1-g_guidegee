@@ -70,6 +70,9 @@ public class ListAdapterSearchPageMap extends BaseAdapter {
                 mapAct.putExtra("guideKey", guidesList.get(currentIndex).getUserKey());
                 mapAct.putExtra("myLat", GPSManager.lastLocation.getLatitude());
                 mapAct.putExtra("myLong", GPSManager.lastLocation.getLongitude());
+                mapAct.putExtra("gLat", guidesList.get(i).getGeolocation().getLatitude());
+                mapAct.putExtra("gLong", guidesList.get(i).getGeolocation().getLongitude());
+                mapAct.putExtra("gRadius", guidesList.get(i).getGuideDistanceThreshold());
                 context.startActivity(mapAct);
 
             }
