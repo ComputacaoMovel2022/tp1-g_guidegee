@@ -82,4 +82,5 @@
     <string name="emptyValue">Empty Value</string>
     <string name="availableGuides">Available guides</string>
     <string name="viewMap">View Map</string>
+    <string name="requestGuidance">Requests for guidance</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.projetocm;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,8 +50,15 @@ public class BottomBarFragment extends Fragment {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SearchPageMap.class);
-                view.getContext().startActivity(intent);
+                SharedPreferences preferences = view.getContext().getSharedPreferences("userDefinitions", Context.MODE_PRIVATE);
+                String isGuideString = preferences.getString("isGuide", "");
+                if (isGuideString.equals("false")) {
+                    Intent intent = new Intent(view.getContext(), SearchPageMap.class);
+                    view.getContext().startActivity(intent);
+                }else{
+                    Intent intent = new Intent(view.getContext(), RequestPage.class);
+                    view.getContext().startActivity(intent);
+                }
             }
         });
 

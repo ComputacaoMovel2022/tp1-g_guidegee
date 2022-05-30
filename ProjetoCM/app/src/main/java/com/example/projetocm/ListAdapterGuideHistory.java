@@ -80,9 +80,8 @@ public class ListAdapterGuideHistory extends BaseAdapter{
             public void onClick(View view) {
                 Intent itRatingGuide = new Intent(context,RatingGuide.class);
                 itRatingGuide.putExtra("guideKey",guidesList.get(currentIndex).getUserKey());
-                 context.startActivity(itRatingGuide);
+                context.startActivity(itRatingGuide);
             }
-
         });
 
 
