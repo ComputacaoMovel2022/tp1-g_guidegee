@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +65,7 @@ public class BottomBarFragment extends Fragment {
                 SharedPreferences preferences = getActivity().getSharedPreferences("userDefinitions", MODE_PRIVATE);
                 boolean isGuide = preferences.getString("isGuide", "").equals("true");
                 Intent intent = new Intent(view.getContext(),
-                        (isGuide) ? RequestsFromRefugees.class : SearchPageMap.class
+                        (isGuide) ? RequestPage.class : SearchPageMap.class
                 );
                 view.getContext().startActivity(intent);
             }

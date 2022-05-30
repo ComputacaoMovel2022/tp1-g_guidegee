@@ -23,6 +23,7 @@ public class User {
     public User() {
         // Empty constructor method, so Firebase can transfer the information over.
     }
+    private boolean isAvailable;
 
     public User(String username, String email, String password)
     {
@@ -64,6 +65,7 @@ public class User {
     }
     public int getGuideDistanceThreshold() {return guideDistanceThreshold;}
     public SimpleLocation getGeolocation() {return geolocation;}
+    public boolean getAvailable(){ return isAvailable;}
 
     public void setUsername(String username) { this.username = username; }
     public void setEmail(String email) { this.email = email; }
@@ -79,4 +81,6 @@ public class User {
     }
     public void setGuideDistanceThreshold(int newDistance) {this.guideDistanceThreshold = newDistance;}
     public void setGeolocation(SimpleLocation geolocation) { this.geolocation = geolocation; }
+    public void setAvailable(boolean isAvailable){this.isAvailable=isAvailable;}
 }
+

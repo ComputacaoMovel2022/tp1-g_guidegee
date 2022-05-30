@@ -19,34 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuideHistory extends AppCompatActivity {
-/*
-    int[] profilePictures = {R.drawable.ellipse_20, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon, R.drawable.empty_profile_icon};
-    String[] profileNames = {"João Morais", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio", "Perfil Vazio"};
-    ListView simpleList;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.guide_history);
-        getSupportActionBar().hide();
-
-        //Lista de Guias
-        simpleList = findViewById(R.id.guidesListView);
-        ListAdapterGuideHistory listAdapterGuideHistoryGuide = new ListAdapterGuideHistory(getApplicationContext(), R.layout.guide_history_list_element, profileNames, profilePictures);
-        listAdapterGuideHistoryGuide.sendContext(this);
-        simpleList.setAdapter(listAdapterGuideHistoryGuide);
-
-        View goBackButton = (View) findViewById(R.id.arrow_2);
-        goBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Go to Home_page
-            }
-        });
-    }
-
- */
     private ListView simpleList;
     private List<User> allHistoryGuides;
     private DAOUser daoUser;

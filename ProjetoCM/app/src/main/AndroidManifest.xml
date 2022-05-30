@@ -31,6 +31,10 @@
             android:name=".GuideListActivity"
             android:exported="false" />
         <activity
+            android:name=".RequestPage"
+            android:exported="false"/>
+
+        <activity
             android:name=".SearchPageMap"
             android:exported="false" />
         <activity

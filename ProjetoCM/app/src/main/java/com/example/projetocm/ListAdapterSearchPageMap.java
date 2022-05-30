@@ -16,19 +16,24 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ListAdapterSearchPageMap extends BaseAdapter {
+    private DAOUser daoUser;
+
     private Context context;
     private List<User> guidesList;
     private LayoutInflater inflater;
     private int itemLayout;
+    private String refugeeKey;
 
     private int currentIndex;
 
 
-    public ListAdapterSearchPageMap(Context applicationContext, int itemLayout, List<User> guidesList) {
+    public ListAdapterSearchPageMap(Context applicationContext, int itemLayout, List<User> guidesList,String refugeeKey) {
         this.context = applicationContext;
         this.guidesList=guidesList;
         inflater = LayoutInflater.from(applicationContext);
         this.itemLayout = itemLayout;
+        this.refugeeKey=refugeeKey;
+        daoUser = new DAOUser();
     }
 
     @Override
