@@ -82,6 +82,8 @@
     <string name="invalid_region_msg">You\'re not within this guide\'s region of activity!</string>
     <string name="invalid_contact_guide">Contact</string>
     <string name="invalid_review_list">Review List</string>
+    <string name="valid_region_msg">You\'re within this guide\s region of activity!</string>
+    <string name="valid_send_request">Request</string>
 
     <string name="emptyValue">Empty Value</string>
     <string name="availableGuides">Available guides</string>
