@@ -67,6 +67,10 @@ public class EditProfile extends AppCompatActivity {
         //Compare Token
         //if equal add edit page
         //else if
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
+        }
         setContentView(R.layout.activity_edit_profile);
         DAOUser daoUser= new DAOUser();
         CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);

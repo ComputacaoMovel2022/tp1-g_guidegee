@@ -39,6 +39,10 @@ public class Settings extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
+        }
         setContentView(R.layout.activity_settings);
         DAOUser daoUser = new DAOUser();
         SharedPreferences preferences = getSharedPreferences("userDefinitions", MODE_PRIVATE);

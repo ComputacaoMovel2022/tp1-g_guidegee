@@ -99,8 +99,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         );
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mPos, 10.0f));
-
-        Toast.makeText(this, "a", Toast.LENGTH_LONG).show();
     }
 
 }
