@@ -9,6 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -76,7 +81,21 @@ public class ListAdapterRequestPage extends BaseAdapter {
                 daoUser.addUserToList(guideKey, refugeesList.get(currentIndex).getUserKey());
                 daoUser.addUserToList(refugeesList.get(currentIndex).getUserKey(), guideKey);
 
-                daoUser.removeUserRequest(guideKey, refugeesList.get(currentIndex).getUserKey());
+                daoUser.getDataSnapshotOnce(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot data: snapshot.child(guideKey).child("AllRequestsUsers").getChildren()){
+                            if(data.getValue(String.class).equals(refugeesList.get(currentIndex).getUserKey())){
+                                daoUser.getDatabaseReference().child(guideKey).child("AllRequestsUsers").child(data.getKey()).removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
         });
@@ -85,7 +104,21 @@ public class ListAdapterRequestPage extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 //doesn't gets in AllAsociated
-                daoUser.removeUserRequest(guideKey, refugeesList.get(currentIndex).getUserKey());
+                daoUser.getDataSnapshotOnce(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot data: snapshot.child(guideKey).child("AllRequestsUsers").getChildren()){
+                            if(data.getValue(String.class).equals(refugeesList.get(currentIndex).getUserKey())){
+                                daoUser.getDatabaseReference().child(guideKey).child("AllRequestsUsers").child(data.getKey()).removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
         });

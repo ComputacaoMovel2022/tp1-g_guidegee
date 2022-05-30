@@ -100,11 +100,7 @@ public class DAOUser {
     public Task<Void> addUserRequestList(String guideUserKey, String refugeeUserKey) {
         return databaseReference.child(guideUserKey).child(ALL_REQUESTS_USERS_ATTRIBUTE).push().setValue(refugeeUserKey);
     }
-
-
-    public Task<Void> removeUserRequest(String guideUserKey,String refugeeUserKey) {
-        return databaseReference.child(guideUserKey).child(ALL_REQUESTS_USERS_ATTRIBUTE).child(refugeeUserKey).removeValue();
-    }
+    
     /**
      * Adds an user to a reviewed users list which the main user is associated.
      * Solves the situation of the refugees making multiple review's instead of editing their review
