@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="requests_for_guidance">Pedido de guia</string>
+<string name="accept">Aceitar</string>
+<string name="decline">Recusar</string>
+<string name="your_history">Histórico</string>
+<string name="app_name">GuideGee</string>
+<string name="guest_sign"><u>Entra como convidado</u></string>
+<string name="sign_up"><u>Registar</u></string>
+<string name="title_activity_loading_page">Página de carregar atividade</string>
+<string name="dark_mode">Modo Escuro</string>
+<string name="turn_off_notifications">Desligar notificações</string>
+<string name="helprange">Área de Ajuda</string>
+<string name="availability">Disponibilidade</string>
+<string name="delete_account">Apagar Conta</string>
+<string name="language">Idioma</string>
+<string name="languagecountry">Pais do Idioma</string>
+<string name="title_activity_home">Casa</string>
+<!-- Strings used for fragments for navigation -->
+<string name="first_fragment_label">Primeiro Fragmento</string>
+<string name="second_fragment_label">Segundo Fragmento</string>
+<string name="next">Próximo</string>
+<string name="previous">Anterior</string>
+
+<string name="hello_first_fragment">Olá primeiro fragmento</string>
+<string name="hello_second_fragment">Olá segundo fragmento. Arg: %1$s</string>
+
+<string name="best_guides">Melhores guias</string>
+<string name="_1">1</string>
+<string name="_50_7">50,7</string>
+<string name="_2">2</string>
+<string name="andr_lisboa">André Lisboa</string>
+<string name="_44_5">44,5</string>
+<string name="title_activity_profile">Conta</string>
+<string name="typeuser">Tipo de Utilizador</string>
+<string name="description">Descrição</string>
+<string name="textview">TextView</string>
+<string name="cancel">Cancelar</string>
+<string name="save">Salvar</string>
+<string name="name">Nome</string>
+<string name="name_">Nome:</string>
+<string name="password">Password:</string>
+<string name="confirm_password">Confirmar Password:</string>
+<string name="choose_languages_you_know">Escolhe os Idiomas que conheces:</string>
+<string name="distance_choice">Escolhe a Distância</string>
+<string name="distance_choice_unity">Escolhe a unidade de distância</string>
+<string name="logout">Sair</string>
+<string-array name="UnityChoice">
+    <item>Km</item>
+    <item>mi</item>
+</string-array>
+<string-array name="DistanceChoice">
+    <item>1</item>
+    <item>2</item>
+    <item>5</item>
+    <item>7</item>
+    <item>10</item>
+    <item>15</item>
+    <item>20</item>
+    <item>25</item>
+    <item>30</item>
+</string-array>
+
+<string name="your_histor">Histórico</string>
+<string name="jo_o_morais">João Morais</string>
+<string name="joana_marti">Joana Martins</string>
+<string name="habibi_ali">Habibi Ali</string>
+<string name="mohammed_hu">Mohammed Hudidi</string>
+<string name="ruben_pina">Ruben Pina</string>
+<string name="exName">exemplo</string>
+<string name="review_page">Página de Crítica</string>
+<string name="submit">Submeter</string>
+<string name="back">Voltar</string>
+<string name="review">Crítica</string>
+
+<string name="msgBoxHint">Escreve a tua menssagem aqui.</string>
+<string name="textExample">Texto de Exemplo</string>
+
+<string name="logText">Texto de Log</string>
+
+<string name="rememberMe">Lembras de mim?</string>
+
+    <string-array name="LanguageChoice">
+        <item>Inglês</item>
+        <item>Português</item>
+    </string-array>
+</resources>

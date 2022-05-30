@@ -50,6 +50,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class EditProfile extends AppCompatActivity {
     public static final int Camera_Action_CODE=1;
@@ -68,15 +69,20 @@ public class EditProfile extends AppCompatActivity {
         //else if
         setContentView(R.layout.activity_edit_profile);
         DAOUser daoUser= new DAOUser();
+        CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
+        if(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl() != null && FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString() != ""){
+            Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).into(userImage);
+        }else{
+            userImage.setImageResource(R.drawable.perfil_icon);
+        }
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-        CircleImageView userImage = (CircleImageView)findViewById(R.id.UserImage);
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
                 if(result.getResultCode() == RESULT_OK && result.getData() != null){
                     Bundle bundle = result.getData().getExtras();
-                    file = result.getData().getData();
+                    file = (Uri) bundle.get(Intent.EXTRA_STREAM);
                     ref = storageRef.child("images/"+file.getLastPathSegment());
                     Bitmap bitmap = (Bitmap) bundle.get("data");
                     userImage.setImageBitmap(bitmap);
@@ -86,12 +92,13 @@ public class EditProfile extends AppCompatActivity {
         userImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requestPermission();
                 if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if(intent.resolveActivity(getPackageManager()) != null){
                         activityResultLauncher.launch(intent);
                     }
+                }else{
+                    requestPermission();
                 }
             }
         });
@@ -107,6 +114,7 @@ public class EditProfile extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             // Handle unsuccessful uploads
+                            Toast.makeText(getApplicationContext(), "Unable to change photo", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -124,7 +132,17 @@ public class EditProfile extends AppCompatActivity {
                 if(passwordConfirm.getText().toString() != "" && passwordConfirm.getText().toString() != null && password.getText().toString() == passwordConfirm.getText().toString()){
                     daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"password",passwordConfirm.getText().toString());
                 }
+                TextView description = (TextView) findViewById(R.id.User_description);
+                if(description.getText().toString() != "" && description.getText().toString() != null){
+                    //send description to DB
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"description",personName.getText().toString());
+                }
 
+                if(textView.getText().toString() != "" && textView.getText().toString() != null){
+                    //send description to DB
+                    daoUser.setUserAttributeValue(FirebaseAuth.getInstance().getCurrentUser().getUid(),"languagesspoken",textView.getText().toString());
+                }
+                Toast.makeText(getApplicationContext(), "Saves have been made", Toast.LENGTH_SHORT).show();
             }
         });
         Button cancelChanges= (Button)findViewById(R.id.CancelEdits);
@@ -132,6 +150,7 @@ public class EditProfile extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Your changes have been cancelled", Toast.LENGTH_SHORT).show();
                 finish();
                 //Cancel
             }
@@ -162,10 +181,19 @@ public class EditProfile extends AppCompatActivity {
                             langList.add(i);
                             // Sort array list
                             Collections.sort(langList);
+
+
+                            // add in DataBase the lang option
+
+
                         } else {
                             // when checkbox unselected
                             // Remove position from langList
                             langList.remove(Integer.valueOf(i));
+
+
+                            // Remove lang from the langs know
+
                         }
                     }
                 });
